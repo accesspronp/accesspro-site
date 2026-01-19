@@ -1,9 +1,16 @@
 {
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/pay.html", "destination": "/pay", "permanent": true },
+
+    { "source": "/net-pay-netflix", "destination": "/pay?product=Netflix", "permanent": true },
+    { "source": "/net-pay-spotify", "destination": "/pay?product=Spotify%20Premium", "permanent": true },
+    { "source": "/net-pay-youtube", "destination": "/pay?product=YouTube%20Premium", "permanent": true },
+    { "source": "/net-pay-appletv", "destination": "/pay?product=Apple%20TV%2B", "permanent": true },
+    { "source": "/net-pay-chatgpt", "destination": "/pay?product=ChatGPT%20Plus", "permanent": true },
+    { "source": "/net-pay-prime", "destination": "/pay?product=Prime%20Video", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/pay", "destination": "/pay.html" }
-  ],
-  "redirects": [
-    { "source": "/pay.html", "destination": "/pay", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
   ]
 }
