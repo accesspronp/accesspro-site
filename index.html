@@ -6,7 +6,7 @@
   <title>AccesProNp — Subscriptions</title>
   <meta name="description" content="AccesProNp — subscriptions & digital services in Nepal." />
 
-  <!-- TAB LOGO (favicon) -->
+  <!-- TAB LOGO -->
   <link rel="icon" type="image/png" href="logo.png">
 
   <style>
@@ -21,6 +21,8 @@
 
       --a1:#7C3AED;
       --a2:#22D3EE;
+      --a3:#10B981;
+
       --r:18px;
       --btn: linear-gradient(135deg, var(--a1), var(--a2));
       --btn2: rgba(255,255,255,.08);
@@ -34,12 +36,15 @@
       background:
         radial-gradient(1100px 600px at 15% 10%, rgba(124,58,237,.35), transparent 60%),
         radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.22), transparent 55%),
+        radial-gradient(900px 500px at 70% 100%, rgba(16,185,129,.14), transparent 55%),
         var(--bg);
       overflow-x:hidden;
     }
+
     a{color:inherit;text-decoration:none}
     .container{width:min(1120px, 92vw); margin:0 auto}
 
+    /* Header */
     .header{
       position:sticky; top:0; z-index:50;
       background: rgba(7,10,18,.55);
@@ -65,6 +70,7 @@
     .nav a{color: var(--muted)}
     .nav a:hover{color: var(--text)}
 
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:11px 14px;
@@ -74,9 +80,10 @@
       color:#071022;
       font-weight:800;
       box-shadow: var(--shadow);
-      transition: transform .18s ease, filter .18s ease;
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
     }
     .btn:hover{transform: translateY(-2px); filter:brightness(1.05)}
+    .btn:active{transform: translateY(0px) scale(.99)}
     .btn-ghost{
       background: var(--btn2);
       color: var(--text);
@@ -84,6 +91,9 @@
     }
     .btn-small{padding:8px 10px; border-radius:12px; font-weight:750}
     .btn-block{width:100%}
+
+    /* Cards / layout */
+    .hero{padding:44px 0 18px}
 
     .card{
       background: linear-gradient(180deg, var(--panel), var(--panel2));
@@ -93,17 +103,29 @@
       box-shadow: var(--shadow);
     }
 
-    .hero{padding:34px 0 18px}
     h1{
-      font-size:40px; line-height:1.08;
+      font-size:44px; line-height:1.08;
       margin:0 0 10px 0;
       letter-spacing:-.02em;
     }
-    @media (max-width:520px){h1{font-size:32px}}
-    h2{margin:0 0 8px 0; font-size:26px; letter-spacing:-.01em}
+    @media (max-width:520px){h1{font-size:34px}}
+    h2{margin:0 0 8px 0; font-size:28px; letter-spacing:-.01em}
     .muted{color: var(--muted)}
     .tiny{font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size:13px;
+    }
+
+    .section{padding:38px 0}
 
     .grid{
       display:grid;
@@ -124,32 +146,23 @@
     ul{margin:0; padding-left:18px}
     li{margin:6px 0}
 
-    .section{padding:30px 0}
-
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
+    .footer{
+      border-top: 1px solid var(--border);
+      padding:16px 0;
       color: var(--muted);
-      font-size:13px;
     }
+    .footer-row{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
 
-    /* login */
+    /* AUTH UI */
     .auth{
-      display:flex; align-items:center; gap:10px;
-    }
-    .userpill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      border-radius:999px;
-      color: var(--text);
-      font-size:13px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    /* modal */
+    /* MODAL */
     .backdrop{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
@@ -165,7 +178,7 @@
       box-shadow: var(--shadow);
     }
     .modal h3{margin:0 0 12px 0}
-    .row{display:grid; gap:6px; margin:10px 0}
+    .row2{display:grid; gap:6px; margin:10px 0}
     label{font-size:12px; color: var(--muted)}
     input{
       padding:10px 12px;
@@ -178,17 +191,11 @@
     input:focus{border-color: rgba(34,211,238,.55)}
     .actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px}
     .error{color:#ff6b6b; font-size:13px; min-height:18px}
-
-    .footer{
-      border-top: 1px solid var(--border);
-      padding:16px 0;
-      color: var(--muted);
-    }
-    .footer-row{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
   </style>
 </head>
 
 <body>
+
   <header class="header">
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="Home">
@@ -197,13 +204,11 @@
 
       <nav class="nav">
         <a href="#pricing">Pricing</a>
-        <a href="#reviews">Reviews</a>
         <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
       </nav>
 
-      <div class="auth" id="authArea">
-        <!-- filled by JS -->
-      </div>
+      <!-- ✅ LOGIN AREA TOP RIGHT -->
+      <div class="auth" id="authArea"></div>
     </div>
   </header>
 
@@ -216,39 +221,35 @@
             Choose a plan → pay via eSewa → send screenshot on WhatsApp → activation.
           </p>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <div class="hero-actions">
             <a class="btn" href="#pricing">See Pricing</a>
             <a class="btn btn-ghost" href="pay.html">Go to Payment</a>
-            <a class="btn" target="_blank"
-              href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
-              WhatsApp Order
-            </a>
           </div>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <div class="row" style="margin-top:16px">
             <span class="pill">WhatsApp: <span class="mono">9744452908</span></span>
             <span class="pill">eSewa Pay: <span class="mono">9812766213</span></span>
           </div>
 
-          <p class="tiny muted" style="margin-top:12px;">
+          <p class="tiny muted" style="margin-top:14px;">
             Please follow platform rules and use authorized subscription methods only.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
     <section id="pricing" class="section">
       <div class="container">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:14px">
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-end; margin-bottom:14px; flex-wrap:wrap">
           <div>
             <h2>Pricing</h2>
-            <div class="muted">Tap “Order” to open payment page.</div>
+            <div class="muted">Tap “Order” → choose plan on payment page.</div>
           </div>
           <a class="btn btn-ghost" href="pay.html">Open Payment Page</a>
         </div>
 
         <div class="grid">
+
           <!-- Netflix -->
           <article class="card">
             <div class="product-head">
@@ -355,46 +356,8 @@
             </ul>
             <a class="btn btn-block" href="pay.html?product=Prime%20Video">Order</a>
           </article>
+
         </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section id="reviews" class="section">
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:14px">
-          <div>
-            <h2>Customer Reviews</h2>
-            <div class="muted">Trusted by customers • Fast activation • Verified service</div>
-          </div>
-          <a class="btn btn-ghost" target="_blank" href="https://hamrobazaar.com/">
-            View on Hamrobazaar
-          </a>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div style="font-weight:900;">⭐⭐⭐⭐⭐</div>
-            <div class="muted" style="margin-top:6px;">“Instant activation, very trusted seller. Recommended!”</div>
-            <div class="tiny muted" style="margin-top:10px;">— Verified buyer</div>
-          </div>
-
-          <div class="card">
-            <div style="font-weight:900;">⭐⭐⭐⭐⭐</div>
-            <div class="muted" style="margin-top:6px;">“Quick reply on WhatsApp and delivered fast. Legit service ✅”</div>
-            <div class="tiny muted" style="margin-top:10px;">— Verified buyer</div>
-          </div>
-
-          <div class="card">
-            <div style="font-weight:900;">⭐⭐⭐⭐⭐</div>
-            <div class="muted" style="margin-top:6px;">“Smooth payment and activation. Great support.”</div>
-            <div class="tiny muted" style="margin-top:10px;">— Verified buyer</div>
-          </div>
-        </div>
-
-        <p class="tiny muted" style="margin-top:12px;">
-          Tip: You can message us anytime on WhatsApp for quick activation.
-        </p>
       </div>
     </section>
   </main>
@@ -406,142 +369,160 @@
     </div>
   </footer>
 
-  <!-- LOGIN MODAL -->
+  <!-- ✅ LOGIN MODAL -->
   <div class="backdrop" id="loginBackdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true">
-      <h3>Sign in</h3>
+      <h3 id="authTitle">Sign in</h3>
 
-      <div class="row">
-        <label for="username">Username</label>
-        <input id="username" autocomplete="username" placeholder="e.g. noxsus" />
+      <div class="row2">
+        <label>Email</label>
+        <input id="email" type="email" placeholder="example@gmail.com" />
       </div>
 
-      <div class="row">
-        <label for="password">Password</label>
-        <input id="password" type="password" autocomplete="current-password" placeholder="e.g. 1234" />
+      <div class="row2">
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Enter password" />
       </div>
 
-      <div class="error" id="loginError"></div>
+      <div class="error" id="authError"></div>
 
       <div class="actions">
         <button class="btn btn-ghost btn-small" id="googleBtn" type="button">Continue with Google</button>
-        <button class="btn btn-ghost btn-small" id="cancelBtn" type="button">Cancel</button>
-        <button class="btn btn-small" id="loginBtn" type="button">Sign in</button>
+        <button class="btn btn-ghost btn-small" id="switchBtn" type="button">Create account</button>
+        <button class="btn btn-small" id="emailBtn" type="button">Sign in</button>
+        <button class="btn btn-ghost btn-small" id="closeBtn" type="button">Close</button>
       </div>
-
-      <p class="tiny muted" style="margin-top:10px;">
-        Demo login: <span class="mono">admin</span> / <span class="mono">1234</span>
-      </p>
     </div>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- ✅ FIREBASE AUTH SCRIPT -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signInWithEmailAndPassword,
+      createUserWithEmailAndPassword,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
-    // ---------- SIMPLE LOCAL LOGIN (stored in cache/localStorage) ----------
-    const USERS = [
-      { username: "admin", password: "1234", displayName: "admin" },
-      { username: "noxsus", password: "1234", displayName: "noxsus" }
-    ];
+    // ✅ YOUR REAL FIREBASE CONFIG (already added)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDLSSsacibl8A47UshbScBgtAOSxlddWgI",
+      authDomain: "accesspronp.firebaseapp.com",
+      projectId: "accesspronp",
+      storageBucket: "accesspronp.firebasestorage.app",
+      messagingSenderId: "400922708423",
+      appId: "1:400922708423:web:1179ac383ffe9c552231e2",
+      measurementId: "G-NHH5PG9LZY"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
     const authArea = document.getElementById("authArea");
     const loginBackdrop = document.getElementById("loginBackdrop");
-    const loginBtn = document.getElementById("loginBtn");
-    const cancelBtn = document.getElementById("cancelBtn");
-    const googleBtn = document.getElementById("googleBtn");
-    const loginError = document.getElementById("loginError");
-    const usernameEl = document.getElementById("username");
+    const authTitle = document.getElementById("authTitle");
+    const emailEl = document.getElementById("email");
     const passwordEl = document.getElementById("password");
+    const authError = document.getElementById("authError");
 
-    function getSession() {
-      try { return JSON.parse(localStorage.getItem("ap_session") || "null"); }
-      catch { return null; }
-    }
-    function setSession(session) {
-      localStorage.setItem("ap_session", JSON.stringify(session));
-    }
-    function clearSession() {
-      localStorage.removeItem("ap_session");
-    }
+    const googleBtn = document.getElementById("googleBtn");
+    const switchBtn = document.getElementById("switchBtn");
+    const emailBtn = document.getElementById("emailBtn");
+    const closeBtn = document.getElementById("closeBtn");
 
-    function openModal(){
-      loginError.textContent = "";
-      usernameEl.value = "";
-      passwordEl.value = "";
+    let mode = "login"; // login | signup
+
+    function openAuthModal(){
+      authError.textContent = "";
       loginBackdrop.style.display = "flex";
       loginBackdrop.setAttribute("aria-hidden", "false");
-      setTimeout(() => usernameEl.focus(), 0);
     }
-    function closeModal(){
+    function closeAuthModal(){
       loginBackdrop.style.display = "none";
       loginBackdrop.setAttribute("aria-hidden", "true");
     }
 
-    function escapeHtml(str){
-      return String(str).replace(/[&<>"']/g, m => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-      }[m]));
+    function renderMode(){
+      if(mode === "login"){
+        authTitle.textContent = "Sign in";
+        emailBtn.textContent = "Sign in";
+        switchBtn.textContent = "Create account";
+      } else {
+        authTitle.textContent = "Create account";
+        emailBtn.textContent = "Sign up";
+        switchBtn.textContent = "Already have account?";
+      }
     }
 
-    function renderAuth(){
-      const session = getSession();
-      if(!session){
+    switchBtn.addEventListener("click", () => {
+      mode = mode === "login" ? "signup" : "login";
+      authError.textContent = "";
+      renderMode();
+    });
+
+    closeBtn.addEventListener("click", closeAuthModal);
+
+    emailBtn.addEventListener("click", async () => {
+      const email = emailEl.value.trim();
+      const password = passwordEl.value;
+
+      try{
+        if(mode === "login"){
+          await signInWithEmailAndPassword(auth, email, password);
+        } else {
+          await createUserWithEmailAndPassword(auth, email, password);
+        }
+        closeAuthModal();
+      } catch(err){
+        authError.textContent = err.message;
+      }
+    });
+
+    googleBtn.addEventListener("click", async () => {
+      try{
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+        closeAuthModal();
+      } catch(err){
+        authError.textContent = err.message;
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if(!user){
         authArea.innerHTML = `
-          <button class="btn btn-ghost btn-small" id="openLogin">Sign in</button>
+          <button class="btn btn-ghost btn-small" id="openAuth">Sign in</button>
           <a class="btn btn-small" target="_blank"
             href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
             WhatsApp
           </a>
         `;
-        document.getElementById("openLogin").addEventListener("click", openModal);
+        document.getElementById("openAuth").addEventListener("click", openAuthModal);
         return;
       }
+
+      const name = user.displayName || user.email;
 
       authArea.innerHTML = `
-        <span class="userpill">👤 <b>${escapeHtml(session.displayName)}</b></span>
+        <span class="pill">👤 <b>${name}</b></span>
         <button class="btn btn-ghost btn-small" id="logoutBtn">Logout</button>
       `;
-      document.getElementById("logoutBtn").addEventListener("click", () => {
-        clearSession();
-        renderAuth();
-      });
-    }
-
-    function tryLogin(){
-      const u = usernameEl.value.trim();
-      const p = passwordEl.value;
-
-      const found = USERS.find(x => x.username === u && x.password === p);
-      if(!found){
-        loginError.textContent = "Invalid username or password.";
-        return;
-      }
-
-      setSession({ username: found.username, displayName: found.displayName });
-      closeModal();
-      renderAuth();
-    }
-
-    loginBtn.addEventListener("click", tryLogin);
-    cancelBtn.addEventListener("click", closeModal);
+      document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
+    });
 
     loginBackdrop.addEventListener("click", (e) => {
-      if(e.target === loginBackdrop) closeModal();
+      if(e.target === loginBackdrop) closeAuthModal();
     });
 
-    [usernameEl, passwordEl].forEach(el => {
-      el.addEventListener("keydown", (e) => {
-        if(e.key === "Enter") tryLogin();
-        if(e.key === "Escape") closeModal();
-      });
-    });
-
-    // Google login placeholder (real Google needs Client ID)
-    googleBtn.addEventListener("click", () => {
-      alert("Google login needs a Google Client ID. If you want real Google sign-in, tell me and I will set it up.");
-    });
-
-    renderAuth();
+    renderMode();
   </script>
+
 </body>
 </html>
