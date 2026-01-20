@@ -65,11 +65,8 @@
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0; gap:12px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+
+    .brand{display:flex;align-items:center;gap:10px;}
     .brand img{
       width:46px; height:46px; object-fit:contain;
       border-radius:14px;
@@ -119,6 +116,7 @@
       cursor:pointer;
     }
     [data-theme="dark"] .google-btn{ background: rgba(255,255,255,.07); }
+
     .google-icon{
       width:22px; height:22px;
       background:#fff;
@@ -128,12 +126,7 @@
       border: 1px solid rgba(0,0,0,.10);
     }
     .google-icon svg{width:16px;height:16px;display:block}
-    .google-text{
-      display:flex;
-      flex-direction:column;
-      line-height:1.05;
-      text-align:left;
-    }
+    .google-text{display:flex;flex-direction:column;line-height:1.05;text-align:left;}
     .google-text b{font-size:13px}
     .google-text span{font-size:11px; color: var(--muted)}
 
@@ -165,6 +158,7 @@
     }
     @media (max-width:520px){h1{font-size:34px}}
     h2{margin:0 0 8px 0; font-size:28px; letter-spacing:-.01em}
+
     .muted{color: var(--muted)}
     .tiny{font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
@@ -200,7 +194,6 @@
       padding:9px;
       object-fit:contain;
     }
-    [data-theme="dark"] .icon{background: rgba(255,255,255,.06);}
 
     ul{margin:0; padding-left:18px}
     li{margin:6px 0}
@@ -215,28 +208,18 @@
       box-shadow: var(--shadow);
     }
     [data-theme="dark"] .slider-wrap{background: rgba(255,255,255,.06);}
-
-    .slider-track{
-      display: flex;
-      transition: transform .45s ease;
-      will-change: transform;
-    }
+    .slider-track{display:flex;transition:transform .45s ease;will-change:transform;}
     .slide{
-      min-width: 100%;
-      padding: 22px;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: center;
-    }
-    @media (max-width: 760px){
-      .slide{ grid-template-columns: 1fr; }
-    }
-    .slide-right{
-      display:flex;
-      justify-content:center;
+      min-width:100%;
+      padding:22px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
       align-items:center;
     }
+    @media (max-width: 760px){.slide{ grid-template-columns: 1fr; }}
+
+    .slide-right{display:flex;justify-content:center;align-items:center;}
     .product-card{
       width: min(340px, 100%);
       border-radius: 22px;
@@ -246,81 +229,45 @@
       text-align:center;
       box-shadow: 0 18px 60px rgba(0,0,0,.12);
     }
-    [data-theme="dark"] .product-card{
-      background: rgba(255,255,255,.07);
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-    }
+    [data-theme="dark"] .product-card{background: rgba(255,255,255,.07);box-shadow: 0 18px 60px rgba(0,0,0,.55);}
     .product-card img{
-      width: 84px;
-      height: 84px;
-      object-fit: contain;
+      width:84px;height:84px;object-fit:contain;
       background: rgba(0,0,0,.03);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 14px;
-      margin-bottom: 12px;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:14px;
+      margin-bottom:12px;
     }
-    [data-theme="dark"] .product-card img{background: rgba(255,255,255,.06);}
-    .product-card .name{
-      font-weight: 900;
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
+    .product-card .name{font-weight:900;font-size:16px;margin-bottom:6px;}
 
     .slider-btn{
-      position:absolute;
-      top:50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
+      position:absolute;top:50%;
+      transform:translateY(-50%);
+      width:44px;height:44px;border-radius:999px;
+      border:1px solid var(--border);
       background: rgba(255,255,255,.85);
-      color: #111;
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      z-index: 5;
-      transition: transform .18s ease, background .18s ease;
+      color:#111;
+      display:grid;place-items:center;
+      cursor:pointer;z-index:5;
     }
-    [data-theme="dark"] .slider-btn{
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-    }
-    .slider-btn:hover{
-      transform: translateY(-50%) scale(1.06);
-      background: rgba(255,255,255,.98);
-    }
-    [data-theme="dark"] .slider-btn:hover{background: rgba(255,255,255,.14);}
+    [data-theme="dark"] .slider-btn{background: rgba(255,255,255,.08); color: var(--text);}
     .slider-btn.prev{left:12px;}
     .slider-btn.next{right:12px;}
 
     .slider-dots{
-      position:absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 12px;
-      display:flex;
-      gap: 8px;
-      z-index: 6;
+      position:absolute;left:50%;
+      transform:translateX(-50%);
+      bottom:12px;display:flex;gap:8px;z-index:6;
     }
     .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
+      width:10px;height:10px;border-radius:999px;
       background: rgba(0,0,0,.20);
-      border: 1px solid rgba(0,0,0,.12);
+      border:1px solid rgba(0,0,0,.12);
       cursor:pointer;
-      transition: all .2s ease;
+      transition:all .2s ease;
     }
-    [data-theme="dark"] .dot{
-      background: rgba(255,255,255,.25);
-      border: 1px solid rgba(255,255,255,.16);
-    }
-    .dot.active{
-      width: 26px;
-      background: linear-gradient(135deg, var(--a1), var(--a2));
-    }
+    [data-theme="dark"] .dot{background: rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.16);}
+    .dot.active{width:26px;background: linear-gradient(135deg, var(--a1), var(--a2));}
 
     /* Reviews */
     .review-grid{
@@ -339,30 +286,10 @@
       background: rgba(0,0,0,.03);
     }
     [data-theme="dark"] .review-card{background: rgba(255,255,255,.06);}
-
-    .review-head{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:flex-start;
-    }
-    .review-name{
-      font-weight:900;
-      font-size:14px;
-      letter-spacing:-.01em;
-    }
-    .stars{
-      font-weight:900;
-      letter-spacing:1px;
-      color:#f59e0b;
-      font-size:13px;
-    }
-    .review-text{
-      margin-top:8px;
-      color: var(--muted);
-      font-size:13px;
-      line-height:1.45;
-    }
+    .review-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;}
+    .review-name{font-weight:900;font-size:14px;}
+    .stars{font-weight:900;letter-spacing:1px;color:#f59e0b;font-size:13px;}
+    .review-text{margin-top:8px;color: var(--muted);font-size:13px;line-height:1.45;}
 
     .footer{
       border-top: 1px solid var(--border);
@@ -400,11 +327,10 @@
       width:100%;
     }
     [data-theme="dark"] input{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16);}
-    input:focus{border-color: rgba(34,211,238,.75)}
     .actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px}
     .error{color:#ef4444; font-size:13px; min-height:18px}
 
-    /* WhatsApp floating */
+    /* WhatsApp floating support */
     .wa-float{
       position: fixed;
       right: 18px;
@@ -452,8 +378,7 @@
 
       <nav class="nav">
         <a href="#pricing">Pricing</a>
-        <a href="games.html">Games</a>
-        <a href="entertainment.html">Entertainment</a>
+        <a href="#games">Games</a>
         <a href="#reviews">Reviews</a>
         <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
       </nav>
@@ -473,7 +398,7 @@
 
           <span class="google-text">
             <b>Sign in with Google</b>
-            <span>Google Certified ✅</span>
+            <span>Secure Login ✅</span>
           </span>
         </button>
 
@@ -493,32 +418,25 @@
 
           <div class="slider-track" id="sliderTrack">
 
-            <!-- Slide 1 -->
+            <!-- Slide Netflix -->
             <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(229,9,20,.20), transparent 55%), rgba(255,255,255,.55);">
               <div>
                 <h1>Fast activation. Clean pricing.</h1>
                 <p class="muted" style="margin:0 0 14px 0;">
-                  Choose a plan → pay via eSewa → send screenshot on WhatsApp → activation ✅
+                  Pay via eSewa → send screenshot on WhatsApp → activation ✅
                 </p>
-
                 <div class="hero-actions">
                   <a class="btn" href="#pricing">See Pricing</a>
                   <a class="btn btn-ghost" href="pay.html">Go to Payment</a>
-                  <a class="btn btn-ghost" href="games.html">Games Store</a>
                   <a class="btn" target="_blank"
                      href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
                     WhatsApp Order
                   </a>
                 </div>
-
                 <div class="row" style="margin-top:16px">
                   <span class="pill">WhatsApp: <span class="mono">9744452908</span></span>
                   <span class="pill">eSewa Pay: <span class="mono">9812766213</span></span>
                 </div>
-
-                <p class="tiny muted" style="margin-top:14px;">
-                  Trusted store • Fast reply • Secure activation
-                </p>
               </div>
 
               <div class="slide-right">
@@ -532,7 +450,31 @@
               </div>
             </div>
 
-            <!-- Slide 2 -->
+            <!-- Slide ChatGPT -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(16,185,129,.22), transparent 55%), rgba(255,255,255,.55);">
+              <div>
+                <h1>ChatGPT Plus ✅</h1>
+                <p class="muted" style="margin:0 0 14px 0;">
+                  Trusted activation • Fast delivery • Safe login ✅
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="pay.html?product=ChatGPT%20Plus">Order Now</a>
+                  <a class="btn btn-ghost" href="#pricing">See Pricing</a>
+                </div>
+              </div>
+
+              <div class="slide-right">
+                <div class="product-card">
+                  <img src="https://cdn.simpleicons.org/openai" alt="ChatGPT">
+                  <div class="name">ChatGPT Plus</div>
+                  <div class="tiny muted">Starting from</div>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 499</div>
+                  <a class="btn btn-block" href="pay.html?product=ChatGPT%20Plus">Order Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Gemini -->
             <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(59,130,246,.22), transparent 55%), rgba(255,255,255,.55);">
               <div>
                 <h1>Gemini AI + 2TB 🔥</h1>
@@ -541,12 +483,7 @@
                 </p>
                 <div class="hero-actions">
                   <a class="btn" href="pay.html?product=Google%20Gemini%201%20Year">Order Gemini</a>
-                  <a class="btn btn-ghost" href="#pricing">See Pricing</a>
-                </div>
-                <div class="row" style="margin-top:16px">
-                  <span class="pill">✅ 2TB</span>
-                  <span class="pill">✅ Gemini AI</span>
-                  <span class="pill">💰 Rs. 1999</span>
+                  <a class="btn btn-ghost" href="#pricing">All Products</a>
                 </div>
               </div>
 
@@ -561,50 +498,26 @@
               </div>
             </div>
 
-            <!-- Slide 3 -->
-            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(34,197,94,.22), transparent 55%), rgba(255,255,255,.55);">
-              <div>
-                <h1>Games Store 🎮</h1>
-                <p class="muted" style="margin:0 0 14px 0;">
-                  GTA 5 • Minecraft • RDR 2 • Steam/Epic delivery ✅
-                </p>
-                <div class="hero-actions">
-                  <a class="btn" href="games.html">Browse Games</a>
-                  <a class="btn btn-ghost" href="pay.html">Order Now</a>
-                </div>
-              </div>
-
-              <div class="slide-right">
-                <div class="product-card">
-                  <img src="https://cdn.simpleicons.org/steam" alt="Steam">
-                  <div class="name">Steam / Epic</div>
-                  <div class="tiny muted">Any Game</div>
-                  <div style="font-weight:900;font-size:18px;margin:8px 0 12px 0;">Ask Price ✅</div>
-                  <a class="btn btn-block" href="games.html">Open Games</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 4 -->
+            <!-- Slide Perplexity -->
             <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(168,85,247,.22), transparent 55%), rgba(255,255,255,.55);">
               <div>
-                <h1>Entertainment 🎬</h1>
+                <h1>Perplexity Pro ✅</h1>
                 <p class="muted" style="margin:0 0 14px 0;">
-                  Netflix • Prime • YouTube • Crunchyroll • Discord Nitro ✅
+                  1 Year Pro subscription • Best AI search experience ✅
                 </p>
                 <div class="hero-actions">
-                  <a class="btn" href="entertainment.html">Browse Entertainment</a>
+                  <a class="btn" href="pay.html?product=Perplexity%20Pro%201%20Year">Order Pro</a>
                   <a class="btn btn-ghost" href="#pricing">Pricing</a>
                 </div>
               </div>
 
               <div class="slide-right">
                 <div class="product-card">
-                  <img src="https://cdn.simpleicons.org/crunchyroll" alt="Crunchyroll">
-                  <div class="name">Crunchyroll</div>
+                  <img src="https://cdn.simpleicons.org/perplexity" alt="Perplexity">
+                  <div class="name">Perplexity Pro</div>
                   <div class="tiny muted">1 Year</div>
-                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 1999</div>
-                  <a class="btn btn-block" href="pay.html?product=Crunchyroll%201%20Year">Order Now</a>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 1799</div>
+                  <a class="btn btn-block" href="pay.html?product=Perplexity%20Pro%201%20Year">Order Now</a>
                 </div>
               </div>
             </div>
@@ -623,65 +536,127 @@
         <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-end; margin-bottom:14px; flex-wrap:wrap">
           <div>
             <h2>Pricing</h2>
-            <div class="muted">Tap “Order” → choose plan on payment page.</div>
+            <div class="muted">Tap “Order” → choose product on payment page.</div>
           </div>
           <a class="btn btn-ghost" href="pay.html">Open Payment Page</a>
         </div>
 
         <div class="grid">
 
+          <!-- Netflix -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Netflix" src="https://cdn.simpleicons.org/netflix" />
               <div>
                 <div style="font-weight:900;">Netflix</div>
-                <div class="muted tiny">Plans available</div>
+                <div class="muted tiny">Trusted activation</div>
               </div>
             </div>
             <ul class="muted">
               <li>1 Month — Rs. 349</li>
+              <li>2 Months — Rs. 549</li>
               <li>3 Months — Rs. 849</li>
+              <li>6 Months — Rs. 1549</li>
+              <li>9 Months — Rs. 2199</li>
               <li>1 Year — Rs. 2699</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Netflix">Order</a>
           </article>
 
+          <!-- Spotify -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Spotify Premium" src="https://cdn.simpleicons.org/spotify" />
               <div>
-                <div style="font-weight:900;">Spotify Premium</div>
-                <div class="muted tiny">Platinum</div>
+                <div style="font-weight:900;">Spotify Platinum</div>
+                <div class="muted tiny">Premium activation</div>
               </div>
             </div>
             <ul class="muted">
               <li>3 Months — Rs. 899</li>
-              <li>1 Year — Rs. 2299</li>
+              <li>6 Months — Rs. 1,599</li>
+              <li>1 Year — Rs. 2,299</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Spotify%20Premium">Order</a>
           </article>
 
+          <!-- YouTube -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="YouTube" src="https://cdn.simpleicons.org/youtube" />
               <div>
                 <div style="font-weight:900;">YouTube Premium</div>
-                <div class="muted tiny">No ads</div>
+                <div class="muted tiny">Fast delivery</div>
               </div>
             </div>
             <ul class="muted">
+              <li>1 Month — Rs. 199 (Out of stock)</li>
               <li>3 Months — Rs. 499</li>
+              <li>6 Months — Rs. 899</li>
               <li>1 Year — Rs. 1549</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=YouTube%20Premium">Order</a>
           </article>
 
+          <!-- Apple TV+ -->
           <article class="card">
             <div class="product-head">
-              <img class="icon" alt="Gemini" src="https://cdn.simpleicons.org/google" />
+              <img class="icon" alt="Apple TV+" src="https://cdn.simpleicons.org/apple" />
+              <div>
+                <div style="font-weight:900;">Apple TV+</div>
+                <div class="muted tiny">Plans available</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>1 Month — Rs. 329</li>
+              <li>3 Months — Rs. 849</li>
+              <li>6 Months — Rs. 1649</li>
+              <li>1 Year — Rs. 3049</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Apple%20TV%2B">Order</a>
+          </article>
+
+          <!-- ChatGPT Plus -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="ChatGPT / OpenAI" src="https://cdn.simpleicons.org/openai" />
+              <div>
+                <div style="font-weight:900;">ChatGPT Plus</div>
+                <div class="muted tiny">Trusted activation</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>1 Month — Rs. 499</li>
+              <li>2 Months — Rs. 899</li>
+              <li>3 Months — Rs. 949</li>
+              <li>6 Months — Rs. 1349</li>
+              <li>1 Year — Rs. 2849</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=ChatGPT%20Plus">Order</a>
+          </article>
+
+          <!-- Prime Video -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Prime Video" src="https://cdn.simpleicons.org/amazonprime" />
+              <div>
+                <div style="font-weight:900;">Prime Video</div>
+                <div class="muted tiny">6 Months plan</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>6 Months — Rs. 549</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Prime%20Video">Order</a>
+          </article>
+
+          <!-- Gemini -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Google Gemini" src="https://cdn.simpleicons.org/google" />
               <div>
                 <div style="font-weight:900;">Google Gemini + 2TB</div>
-                <div class="muted tiny">1 Year</div>
+                <div class="muted tiny">1 Year Plan</div>
               </div>
             </div>
             <ul class="muted">
@@ -691,12 +666,28 @@
             <a class="btn btn-block" href="pay.html?product=Google%20Gemini%201%20Year">Order</a>
           </article>
 
+          <!-- Perplexity -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Perplexity" src="https://cdn.simpleicons.org/perplexity" />
+              <div>
+                <div style="font-weight:900;">Perplexity Pro</div>
+                <div class="muted tiny">1 Year</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>1 Year — Rs. 1799</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Perplexity%20Pro%201%20Year">Order</a>
+          </article>
+
+          <!-- Discord -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Discord" src="https://cdn.simpleicons.org/discord" />
               <div>
                 <div style="font-weight:900;">Discord Nitro</div>
-                <div class="muted tiny">3 Months</div>
+                <div class="muted tiny">Own Account</div>
               </div>
             </div>
             <ul class="muted">
@@ -706,18 +697,97 @@
             <a class="btn btn-block" href="pay.html?product=Discord%20Nitro%203%20Months">Order</a>
           </article>
 
+          <!-- Crunchyroll -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Crunchyroll" src="https://cdn.simpleicons.org/crunchyroll" />
               <div>
                 <div style="font-weight:900;">Crunchyroll</div>
-                <div class="muted tiny">1 Year</div>
+                <div class="muted tiny">Anime Premium</div>
               </div>
             </div>
             <ul class="muted">
               <li>1 Year — Rs. 1999</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Crunchyroll%201%20Year">Order</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMES SECTION -->
+    <section id="games" class="section">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-end; margin-bottom:14px; flex-wrap:wrap">
+          <div>
+            <h2>Games Store 🎮</h2>
+            <div class="muted">Buy games on your own Steam / Epic account ✅</div>
+          </div>
+          <a class="btn btn-ghost" href="pay.html">Order Games</a>
+        </div>
+
+        <div class="grid">
+
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="GTA 5" src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" />
+              <div>
+                <div style="font-weight:900;">GTA 5</div>
+                <div class="muted tiny">Full Game</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>Price — Rs. 2199</li>
+              <li>Own account ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=GTA%205">Order</a>
+          </article>
+
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Minecraft" src="https://cdn.simpleicons.org/minecraft" />
+              <div>
+                <div style="font-weight:900;">Minecraft</div>
+                <div class="muted tiny">Java / Bedrock</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>Price — Rs. 1799</li>
+              <li>Own account ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Minecraft">Order</a>
+          </article>
+
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Red Dead Redemption 2" src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" />
+              <div>
+                <div style="font-weight:900;">RDR 2</div>
+                <div class="muted tiny">Full Game</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>Price — Rs. 2399</li>
+              <li>Own account ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=RDR%202">Order</a>
+          </article>
+
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Steam" src="https://cdn.simpleicons.org/steam" />
+              <div>
+                <div style="font-weight:900;">Any Steam / Epic Game</div>
+                <div class="muted tiny">INR price + charge</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>Current INR pricing ✅</li>
+              <li>Own account delivery ✅</li>
+              <li>Fast support on WhatsApp</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Any%20Steam%20or%20Epic%20Game">Order</a>
           </article>
 
         </div>
@@ -731,12 +801,8 @@
           <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-end; flex-wrap:wrap;">
             <div>
               <h2 style="margin:0;">Customer Reviews</h2>
-              <div class="muted tiny">Trusted customers • 5★ rated</div>
+              <div class="muted tiny">Trusted customers • 5★ rated ✅</div>
             </div>
-            <a class="btn btn-ghost btn-small" target="_blank"
-               href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
-              View Reviews ✅
-            </a>
           </div>
 
           <div class="review-grid">
@@ -753,7 +819,7 @@
                 <div class="review-name">Bobesh Tajpuriya</div>
                 <div class="stars">★★★★★</div>
               </div>
-              <div class="review-text">good</div>
+              <div class="review-text">Good service ✅</div>
             </div>
 
             <div class="review-card">
@@ -761,12 +827,12 @@
                 <div class="review-name">Nraj</div>
                 <div class="stars">★★★★★</div>
               </div>
-              <div class="review-text">Got 1 year Sub for Spotify. Recommended!!</div>
+              <div class="review-text">Got 1 year Spotify. Recommended!!</div>
             </div>
           </div>
 
           <div class="tiny muted" style="margin-top:14px;">
-            Trusted store • Fast activation • WhatsApp support ✅
+            WhatsApp support available • Fast activation • Trusted store ✅
           </div>
         </div>
       </div>
@@ -776,15 +842,11 @@
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> AccesProNp Trusted</span>
-      <div class="row">
-        <a class="muted" href="games.html">Games</a>
-        <a class="muted" href="entertainment.html">Entertainment</a>
-        <a class="muted" href="pay.html">Payment</a>
-      </div>
+      <a href="pay.html" class="muted">Payment</a>
     </div>
   </footer>
 
-  <!-- ✅ WhatsApp floating support -->
+  <!-- WhatsApp floating support -->
   <div class="wa-float">
     <div class="wa-bubble">Support</div>
     <a class="wa-btn" target="_blank"
@@ -793,7 +855,7 @@
     </a>
   </div>
 
-  <!-- ✅ LOGIN MODAL -->
+  <!-- LOGIN MODAL -->
   <div class="backdrop" id="loginBackdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true">
       <h3>Sign in</h3>
@@ -848,7 +910,7 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ✅ Theme toggle
+    // Theme
     const themeBtn = document.getElementById("themeBtn");
     function applyTheme(t){
       document.documentElement.setAttribute("data-theme", t);
@@ -861,7 +923,7 @@
       applyTheme(cur === "dark" ? "light" : "dark");
     });
 
-    // ✅ Auth
+    // Auth
     const authArea = document.getElementById("authArea");
     const loginBackdrop = document.getElementById("loginBackdrop");
     const emailEl = document.getElementById("email");
@@ -936,7 +998,7 @@
       document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
     });
 
-    /* Slider */
+    // Slider
     const track = document.getElementById("sliderTrack");
     const slider = document.getElementById("heroSlider");
     const prevBtn = slider.querySelector(".prev");
