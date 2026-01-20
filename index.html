@@ -6,25 +6,24 @@
   <title>AccesProNp — Subscriptions</title>
   <meta name="description" content="AccesProNp — subscriptions & digital services in Nepal." />
 
-  <!-- TAB LOGO -->
   <link rel="icon" type="image/png" href="logo.png">
 
   <style>
     :root{
-      --bg:#070A12;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.04);
-      --text:#ECF2FF;
-      --muted:#A9B5D6;
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --bg:#f6f7fb;
+      --panel: rgba(0,0,0,.04);
+      --panel2: rgba(0,0,0,.02);
+      --text:#0b1020;
+      --muted:#4b5563;
+      --border: rgba(0,0,0,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.12);
 
       --a1:#7C3AED;
       --a2:#22D3EE;
 
       --r:18px;
       --btn: linear-gradient(135deg, var(--a1), var(--a2));
-      --btn2: rgba(255,255,255,.08);
+      --btn2: rgba(0,0,0,.05);
     }
 
     *{box-sizing:border-box}
@@ -33,9 +32,9 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1100px 600px at 15% 10%, rgba(124,58,237,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.22), transparent 55%),
-        radial-gradient(900px 500px at 70% 100%, rgba(16,185,129,.14), transparent 55%),
+        radial-gradient(1100px 600px at 15% 10%, rgba(124,58,237,.16), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.12), transparent 55%),
+        radial-gradient(900px 500px at 70% 100%, rgba(16,185,129,.10), transparent 55%),
         var(--bg);
       overflow-x:hidden;
     }
@@ -43,10 +42,9 @@
     a{color:inherit;text-decoration:none}
     .container{width:min(1120px, 92vw); margin:0 auto}
 
-    /* Header */
     .header{
       position:sticky; top:0; z-index:50;
-      background: rgba(7,10,18,.55);
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -55,26 +53,27 @@
       padding:14px 0; gap:12px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
     .brand img{
       width:46px; height:46px; object-fit:contain;
       border-radius:14px;
-      background: rgba(255,255,255,.03);
+      background: rgba(0,0,0,.02);
       border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
     }
 
     .nav{display:flex; align-items:center; gap:16px}
     .nav a{color: var(--muted)}
     .nav a:hover{color: var(--text)}
 
-    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:11px 14px;
       border-radius:14px;
-      border: 1px solid rgba(255,255,255,.14);
+      border: 1px solid rgba(0,0,0,.12);
       background: var(--btn);
       color:#071022;
       font-weight:800;
@@ -94,17 +93,17 @@
     .btn-small{padding:8px 10px; border-radius:12px; font-weight:750}
     .btn-block{width:100%}
 
-    /* Google Button (legit look) */
     .google-btn{
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.12);
       color: var(--text);
       padding:10px 12px;
       border-radius:14px;
       display:flex;
       align-items:center;
       gap:10px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      box-shadow: 0 14px 40px rgba(0,0,0,.10);
+      cursor:pointer;
     }
     .google-icon{
       width:22px; height:22px;
@@ -112,7 +111,7 @@
       border-radius:6px;
       display:grid;
       place-items:center;
-      border: 1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(0,0,0,.10);
     }
     .google-icon svg{width:16px;height:16px;display:block}
     .google-text{
@@ -132,11 +131,10 @@
       justify-content:flex-end;
     }
 
-    /* Layout */
     .hero{padding:44px 0 18px}
 
     .card{
-      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
       border: 1px solid var(--border);
       border-radius: var(--r);
       padding:16px;
@@ -160,7 +158,7 @@
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px; border-radius:999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
+      background: rgba(0,0,0,.03);
       color: var(--muted);
       font-size:13px;
     }
@@ -180,13 +178,12 @@
       width:40px;height:40px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.06);
+      background: rgba(0,0,0,.03);
       padding:9px;
     }
     ul{margin:0; padding-left:18px}
     li{margin:6px 0}
 
-    /* Reviews */
     .review-grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -200,7 +197,7 @@
       padding:14px;
       border-radius:18px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
+      background: rgba(0,0,0,.03);
     }
     .review-head{
       display:flex;
@@ -216,7 +213,7 @@
     .stars{
       font-weight:900;
       letter-spacing:1px;
-      color:#ffd166;
+      color:#f59e0b;
       font-size:13px;
     }
     .review-text{
@@ -226,7 +223,6 @@
       line-height:1.45;
     }
 
-    /* Footer */
     .footer{
       border-top: 1px solid var(--border);
       padding:16px 0;
@@ -237,13 +233,13 @@
     /* MODAL */
     .backdrop{
       position:fixed; inset:0;
-      background:rgba(0,0,0,.55);
+      background:rgba(0,0,0,.35);
       display:none; align-items:center; justify-content:center;
       padding:18px; z-index:99;
     }
     .modal{
       width:min(420px, 100%);
-      background:#0b1020;
+      background:#ffffff;
       border:1px solid var(--border);
       border-radius:18px;
       padding:16px;
@@ -255,14 +251,174 @@
     input{
       padding:10px 12px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(0,0,0,.12);
+      background: rgba(0,0,0,.03);
       color: var(--text);
       outline:none;
     }
-    input:focus{border-color: rgba(34,211,238,.55)}
+    input:focus{border-color: rgba(34,211,238,.75)}
     .actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px}
-    .error{color:#ff6b6b; font-size:13px; min-height:18px}
+    .error{color:#ef4444; font-size:13px; min-height:18px}
+
+    /* SLIDER */
+    .slider-wrap{
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      box-shadow: var(--shadow);
+    }
+    .slider-track{
+      display: flex;
+      transition: transform .45s ease;
+      will-change: transform;
+    }
+    .slide{
+      min-width: 100%;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: center;
+    }
+    @media (max-width: 760px){
+      .slide{ grid-template-columns: 1fr; }
+    }
+    .slide-tags{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+    .tag{
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.03);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .slide-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .product-card{
+      width: min(340px, 100%);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.90);
+      padding: 16px;
+      text-align:center;
+      box-shadow: 0 18px 60px rgba(0,0,0,.12);
+    }
+    .product-card img{
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      background: rgba(0,0,0,.03);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .product-card .name{
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .slider-btn{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      color: #111;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      z-index: 5;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .slider-btn:hover{
+      transform: translateY(-50%) scale(1.06);
+      background: rgba(255,255,255,.98);
+    }
+    .slider-btn.prev{left:12px;}
+    .slider-btn.next{right:12px;}
+    .slider-dots{
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      display:flex;
+      gap: 8px;
+      z-index: 6;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(0,0,0,.12);
+      cursor:pointer;
+      transition: all .2s ease;
+    }
+    .dot.active{
+      width: 26px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+    }
+
+    /* ✅ SALE BOX */
+    .offer-box{
+      display:grid;
+      gap:10px;
+      padding:16px;
+      border-radius:22px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      box-shadow: var(--shadow);
+    }
+    .offer-title{
+      font-weight:900;
+      font-size:18px;
+    }
+    .offer-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    /* ✅ PAYMENT METHODS IMAGE */
+    .pay-methods-img{
+      width:100%;
+      max-width: 560px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      box-shadow: var(--shadow);
+      padding: 10px;
+    }
+
+    /* ✅ Hamrobazaar */
+    .hb-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:12px;
+    }
+    .hb-logo{
+      height:32px;
+      width:auto;
+      object-fit:contain;
+    }
   </style>
 </head>
 
@@ -280,7 +436,6 @@
         <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
       </nav>
 
-      <!-- ✅ AUTH TOP RIGHT -->
       <div class="auth">
         <button class="google-btn" id="googleTopBtn" type="button" title="Sign in with Google">
           <span class="google-icon" aria-hidden="true">
@@ -304,39 +459,97 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <div class="card">
-          <h1>Fast activation. Clean pricing.</h1>
-          <p class="muted" style="margin:0 0 14px 0;">
-            Choose a plan → pay via eSewa → send screenshot on WhatsApp → activation.
-          </p>
 
-          <div class="hero-actions">
-            <a class="btn" href="#pricing">See Pricing</a>
+        <div class="slider-wrap" id="heroSlider">
+          <button class="slider-btn prev" type="button" aria-label="Previous slide">❮</button>
+          <button class="slider-btn next" type="button" aria-label="Next slide">❯</button>
 
-            <a class="btn btn-ghost" href="pay.html">Go to Payment</a>
+          <div class="slider-track" id="sliderTrack">
 
-            <a class="btn btn-ghost" target="_blank"
-               href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
-              Hamrobazaar Profile ✅
-            </a>
+            <!-- Slide 1 -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(229,9,20,.20), transparent 55%), rgba(255,255,255,.55);">
+              <div>
+                <h1>Fast activation. Clean pricing.</h1>
+                <p class="muted" style="margin:0 0 14px 0;">
+                  Choose a plan → pay via eSewa → send screenshot on WhatsApp → activation ✅
+                </p>
 
-            <a class="btn" target="_blank"
-               href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
-              WhatsApp Order
-            </a>
+                <div class="hero-actions">
+                  <a class="btn" href="#pricing">See Pricing</a>
+                  <a class="btn btn-ghost" href="pay.html">Go to Payment</a>
+                  <a class="btn btn-ghost" target="_blank"
+                     href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
+                    Hamrobazaar Profile ✅
+                  </a>
+                  <a class="btn" target="_blank"
+                     href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
+                    WhatsApp Order
+                  </a>
+                </div>
+
+                <div class="row" style="margin-top:16px">
+                  <span class="pill">WhatsApp: <span class="mono">9744452908</span></span>
+                  <span class="pill">eSewa Pay: <span class="mono">9812766213</span></span>
+                </div>
+
+                <p class="tiny muted" style="margin-top:14px;">
+                  Trusted store • Fast reply • Secure activation
+                </p>
+              </div>
+
+              <div class="slide-right">
+                <div class="product-card">
+                  <img src="https://cdn.simpleicons.org/netflix" alt="Netflix">
+                  <div class="name">Netflix</div>
+                  <div class="tiny muted">Starting from</div>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 349</div>
+                  <a class="btn btn-block" href="pay.html?product=Netflix">Order Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(29,185,84,.20), transparent 55%), rgba(255,255,255,.55);">
+              <div>
+                <h1>Grab the deal 🔥</h1>
+                <p class="muted" style="margin:0 0 14px 0;">
+                  Cheapest pricing • Limited time offers • Instant activation ✅
+                </p>
+
+                <div class="offer-box">
+                  <div class="offer-title">✅ Sale Offer Going On</div>
+                  <div class="offer-badges">
+                    <span class="pill">💸 Cheapest Pricing</span>
+                    <span class="pill">⏳ Limited Offers</span>
+                    <span class="pill">⚡ Fast Delivery</span>
+                  </div>
+
+                  <div class="hero-actions">
+                    <a class="btn" href="pay.html">Grab Now</a>
+                    <a class="btn btn-ghost" href="#pricing">See Deals</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide-right">
+                <div class="product-card">
+                  <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
+                  <div class="name">Spotify Platinum</div>
+                  <div class="tiny muted">Starting from</div>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 899</div>
+                  <a class="btn btn-block" href="pay.html?product=Spotify%20Premium">Order Now</a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <div class="row" style="margin-top:16px">
-            <span class="pill">WhatsApp: <span class="mono">9744452908</span></span>
-            <span class="pill">eSewa Pay: <span class="mono">9812766213</span></span>
-          </div>
-
-          <p class="tiny muted" style="margin-top:14px;">
-            Trusted store • Fast reply • Secure activation
-          </p>
+          <div class="slider-dots" id="sliderDots"></div>
         </div>
+
       </div>
     </section>
 
@@ -373,10 +586,10 @@
             <a class="btn btn-block" href="pay.html?product=Netflix">Order</a>
           </article>
 
-          <!-- Spotify Platinum -->
+          <!-- Spotify -->
           <article class="card">
             <div class="product-head">
-              <img class="icon" alt="Spotify Platinum" src="https://cdn.simpleicons.org/spotify" />
+              <img class="icon" alt="Spotify Premium" src="https://cdn.simpleicons.org/spotify" />
               <div>
                 <div style="font-weight:900;">Spotify Platinum</div>
                 <div class="muted tiny">Premium activation</div>
@@ -387,10 +600,10 @@
               <li>6 Months — Rs. 1,599</li>
               <li>1 Year — Rs. 2,299</li>
             </ul>
-            <a class="btn btn-block" href="pay.html?product=Spotify%20Platinum">Order</a>
+            <a class="btn btn-block" href="pay.html?product=Spotify%20Premium">Order</a>
           </article>
 
-          <!-- YouTube Premium -->
+          <!-- YouTube -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="YouTube" src="https://cdn.simpleicons.org/youtube" />
@@ -504,83 +717,49 @@
               </div>
               <div class="review-text">Got 1 year Sub for Spotify. Recommended!!</div>
             </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Bikram Acharya</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">Trusted and authentic</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">k dhital</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">i just got one year spotify membership. Will purchase again</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Ankit Yadav</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">got 1year Spotify subscription. it was fast and authentic. now I can listen to my giga Chad podcasts without ads.</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">bibek pandey</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">Genuine!! Go for it guys</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Apeksha Lama</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">Quick response, friendly, and very helpful.</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Siok Rajbhandari</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">Good service, I got the account!</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Biraj</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">quick response; good service, thank you</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Bijendra Suwal</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">Well Trusted Good Customer Service</div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-head">
-                <div class="review-name">Asgar Ali</div>
-                <div class="stars">★★★★★</div>
-              </div>
-              <div class="review-text">Great guy. Got me youtube premium with in 10 minutes. Recommended for service</div>
-            </div>
           </div>
 
           <div class="tiny muted" style="margin-top:14px;">
             Verified from Hamrobazaar profile • Fast activation • Trusted store ✅
           </div>
+
+          <!-- ✅ PAYMENT METHODS + HAMROBAZAAR + CONTACT -->
+          <div style="margin-top:18px; display:grid; gap:14px;">
+            <div class="card" style="padding:14px;">
+              <div style="font-weight:900; font-size:16px;">Accepted Payments ✅</div>
+              <div class="muted tiny" style="margin:6px 0 10px 0;">
+                Pay using eSewa / Khalti / FonePay / IME Pay
+              </div>
+
+              <!-- ✅ Put the image file in same folder as index.html -->
+              <img class="pay-methods-img" src="payments.png" alt="Payment Methods">
+            </div>
+
+            <div class="card" style="padding:14px;">
+              <div class="hb-row">
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                  <img class="hb-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Hamrobazar_logo.png/640px-Hamrobazar_logo.png" alt="Hamrobazaar">
+                  <div>
+                    <div style="font-weight:900;">Hamrobazaar Trusted ✅</div>
+                    <div class="muted tiny">Check my profile & reviews</div>
+                  </div>
+                </div>
+
+                <a class="btn btn-ghost" target="_blank"
+                   href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
+                  View Profile
+                </a>
+              </div>
+
+              <div style="margin-top:12px;">
+                <a class="btn btn-block" target="_blank"
+                   href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
+                  Contact Us on WhatsApp ✅
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -593,7 +772,7 @@
     </div>
   </footer>
 
-  <!-- ✅ LOGIN MODAL (Email/Password) -->
+  <!-- ✅ LOGIN MODAL -->
   <div class="backdrop" id="loginBackdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true">
       <h3>Sign in</h3>
@@ -621,7 +800,6 @@
     </div>
   </div>
 
-  <!-- ✅ FIREBASE AUTH SCRIPT -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
     import {
@@ -634,7 +812,6 @@
       signOut
     } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
-    // ✅ YOUR FIREBASE CONFIG
     const firebaseConfig = {
       apiKey: "AIzaSyDLSSsacibl8A47UshbScBgtAOSxlddWgI",
       authDomain: "accesspronp.firebaseapp.com",
@@ -657,7 +834,6 @@
     const authError = document.getElementById("authError");
     const emailBtn = document.getElementById("emailBtn");
     const closeBtn = document.getElementById("closeBtn");
-
     const googleTopBtn = document.getElementById("googleTopBtn");
 
     function openAuthModal(){
@@ -679,7 +855,6 @@
         alert(err.message);
       }
     }
-
     googleTopBtn.addEventListener("click", googleSignIn);
 
     emailBtn.addEventListener("click", async () => {
@@ -687,14 +862,11 @@
       const password = passwordEl.value;
 
       try{
-        // ✅ Legit flow: if user exists -> login
-        // if user not found -> auto create account (smooth)
         try{
           await signInWithEmailAndPassword(auth, email, password);
         } catch (e) {
           await createUserWithEmailAndPassword(auth, email, password);
         }
-
         closeAuthModal();
       } catch(err){
         authError.textContent = err.message;
@@ -703,7 +875,6 @@
 
     closeBtn.addEventListener("click", closeAuthModal);
 
-    // close modal on backdrop click
     loginBackdrop.addEventListener("click", (e) => {
       if(e.target === loginBackdrop) closeAuthModal();
     });
@@ -729,9 +900,68 @@
       `;
       document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
     });
+
+    /* Slider JS */
+    const track = document.getElementById("sliderTrack");
+    const slider = document.getElementById("heroSlider");
+    const prevBtn = slider.querySelector(".prev");
+    const nextBtn = slider.querySelector(".next");
+    const dotsWrap = document.getElementById("sliderDots");
+    const slides = Array.from(track.children);
+    let index = 0;
+    let autoTimer = null;
+
+    function renderDots(){
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === index ? " active" : "");
+        d.addEventListener("click", () => {
+          index = i;
+          update();
+          restartAuto();
+        });
+        dotsWrap.appendChild(d);
+      });
+    }
+
+    function update(){
+      track.style.transform = `translateX(-${index * 100}%)`;
+      renderDots();
+    }
+
+    function next(){
+      index = (index + 1) % slides.length;
+      update();
+    }
+
+    function prev(){
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    }
+
+    function restartAuto(){
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 3800);
+    }
+
+    nextBtn.addEventListener("click", () => { next(); restartAuto(); });
+    prevBtn.addEventListener("click", () => { prev(); restartAuto(); });
+
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if(Math.abs(diff) > 50){
+        diff > 0 ? next() : prev();
+        restartAuto();
+      }
+    }, {passive:true});
+
+    update();
+    restartAuto();
   </script>
 
 </body>
 </html>
-
-

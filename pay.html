@@ -8,13 +8,13 @@
 
   <style>
     :root{
-      --bg:#070A12;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.04);
-      --text:#ECF2FF;
-      --muted:#A9B5D6;
-      --border: rgba(255,255,255,.12);
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --bg:#f6f7fb;
+      --panel: rgba(0,0,0,.04);
+      --panel2: rgba(0,0,0,.02);
+      --text:#0b1020;
+      --muted:#4b5563;
+      --border: rgba(0,0,0,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.12);
 
       --a1:#7C3AED;
       --a2:#22D3EE;
@@ -22,7 +22,7 @@
 
       --r:18px;
       --btn: linear-gradient(135deg, var(--a1), var(--a2));
-      --btn2: rgba(255,255,255,.08);
+      --btn2: rgba(0,0,0,.05);
     }
 
     *{box-sizing:border-box}
@@ -31,9 +31,9 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1100px 600px at 15% 10%, rgba(124,58,237,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.22), transparent 55%),
-        radial-gradient(900px 500px at 70% 100%, rgba(16,185,129,.14), transparent 55%),
+        radial-gradient(1100px 600px at 15% 10%, rgba(124,58,237,.16), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.12), transparent 55%),
+        radial-gradient(900px 500px at 70% 100%, rgba(16,185,129,.10), transparent 55%),
         var(--bg);
       overflow-x:hidden;
     }
@@ -43,7 +43,7 @@
 
     .header{
       position:sticky; top:0; z-index:50;
-      background: rgba(7,10,18,.55);
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -54,9 +54,9 @@
     .brand img{
       width:46px; height:46px; object-fit:contain;
       border-radius:14px;
-      background: rgba(255,255,255,.03);
+      background: rgba(0,0,0,.02);
       border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
     }
     .nav{display:flex; align-items:center; gap:16px}
     .nav a{color: var(--muted)}
@@ -67,7 +67,7 @@
       display:inline-flex; align-items:center; justify-content:center;
       padding:11px 14px;
       border-radius:14px;
-      border: 1px solid rgba(255,255,255,.14);
+      border: 1px solid rgba(0,0,0,.12);
       background: var(--btn);
       color:#071022;
       font-weight:800;
@@ -83,7 +83,7 @@
     .btn-small{padding:8px 10px; border-radius:12px; font-weight:750}
 
     .card{
-      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
       border: 1px solid var(--border);
       border-radius: var(--r);
       padding:16px;
@@ -112,43 +112,67 @@
       padding:10px 12px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(0,0,0,.22);
+      background: rgba(0,0,0,.03);
       color: var(--text);
       outline:none;
     }
-    input:focus,textarea:focus,select:focus{border-color: rgba(34,211,238,.55)}
+    input:focus,textarea:focus,select:focus{border-color: rgba(34,211,238,.75)}
 
     .pay-box{
       border:1px solid var(--border);
       border-radius:16px;
       padding:12px;
       margin:12px 0;
-      background: rgba(255,255,255,.03);
+      background: rgba(0,0,0,.02);
     }
     .qr{
       width:100%;
       max-width:270px;
       border-radius:16px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
+      background: rgba(0,0,0,.02);
     }
     .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between}
     .chip{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px; border-radius:999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
+      background: rgba(0,0,0,.03);
       color: var(--muted);
       font-size:13px;
     }
 
     .hint{
-      border-left: 3px solid rgba(34,211,238,.6);
+      border-left: 3px solid rgba(34,211,238,.65);
       padding:10px 12px;
       border-radius: 12px;
-      background: rgba(34,211,238,.08);
+      background: rgba(34,211,238,.10);
       color: var(--muted);
       font-size:13px;
+    }
+
+    .pay-methods-img{
+      width:100%;
+      max-width: 520px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      box-shadow: var(--shadow);
+      padding: 10px;
+    }
+
+    .hb-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:12px;
+    }
+    .hb-logo{
+      height:32px;
+      width:auto;
+      object-fit:contain;
     }
   </style>
 </head>
@@ -162,7 +186,7 @@
 
       <nav class="nav">
         <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#how">How it works</a>
+        <a href="index.html#reviews">Reviews</a>
       </nav>
 
       <a class="btn" target="_blank"
@@ -181,7 +205,14 @@
         </p>
 
         <div class="hint" style="margin-top:12px;">
-          Website can’t auto-send images to WhatsApp. After WhatsApp opens, <b>attach your screenshot</b> in chat.
+          Website can’t auto-send images to WhatsApp. After WhatsApp opens, <b>attach your screenshot</b> in chat ✅
+        </div>
+
+        <div class="pay-box">
+          <div style="font-weight:900;">🔥 Grab the deal</div>
+          <div class="muted tiny" style="margin-top:6px;">
+            Cheapest pricing • Limited offers • Fast activation ✅
+          </div>
         </div>
 
         <form id="orderForm">
@@ -221,8 +252,31 @@
             <textarea name="notes" rows="3" placeholder="Any extra info..."></textarea>
           </label>
 
-          <button class="btn btn-block" type="submit">Send Order on WhatsApp</button>
+          <button class="btn btn-block" type="submit">Payment Done ✅ Send Order on WhatsApp</button>
         </form>
+
+        <div class="hb-row" style="margin-top:18px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <img class="hb-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Hamrobazar_logo.png/640px-Hamrobazar_logo.png" alt="Hamrobazaar">
+            <div>
+              <div style="font-weight:900;">Hamrobazaar Trusted ✅</div>
+              <div class="muted tiny">Check profile & reviews</div>
+            </div>
+          </div>
+
+          <a class="btn btn-ghost" target="_blank"
+             href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
+            View Profile
+          </a>
+        </div>
+
+        <div style="margin-top:12px;">
+          <a class="btn btn-block" target="_blank"
+             href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20have%20paid%20and%20want%20activation.">
+            Contact Us on WhatsApp ✅
+          </a>
+        </div>
+
       </section>
 
       <aside class="card">
@@ -254,6 +308,14 @@
           <img class="qr" src="esewa-qr.png" alt="eSewa QR code" />
         </div>
 
+        <div class="pay-box">
+          <div style="font-weight:900; margin-bottom:6px;">Accepted Payments ✅</div>
+          <div class="muted tiny" style="margin-bottom:10px;">
+            eSewa / Khalti / FonePay / IME Pay
+          </div>
+          <img class="pay-methods-img" src="payments.png" alt="Payment Methods">
+        </div>
+
         <p class="tiny muted" style="margin:0;">
           Safety: Never share OTP/passwords.
         </p>
@@ -262,7 +324,6 @@
   </main>
 
   <script>
-    // Products + plans
     const PLANS = {
       "Netflix": [
         "1 Month - Rs. 299",
@@ -326,7 +387,6 @@
       });
     }
 
-    // Prefill from URL
     const params = new URLSearchParams(location.search);
     const qProduct = params.get("product");
     const qPlan = params.get("plan");
@@ -338,7 +398,6 @@
       fillPlans(productEl.value, "");
     });
 
-    // Screenshot filename display
     const proof = document.getElementById("proof");
     const proofName = document.getElementById("proofName");
     proof.addEventListener("change", () => {
@@ -347,7 +406,6 @@
         : "No file selected.";
     });
 
-    // Copy eSewa
     document.getElementById("copyEsewa").addEventListener("click", async () => {
       try{
         await navigator.clipboard.writeText("9812766213");
@@ -359,38 +417,9 @@
       }
     });
 
-    // Submit -> WhatsApp message
     document.getElementById("orderForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const fd = new FormData(e.target);
 
       const name = fd.get("name") || "";
-      const product = fd.get("product") || "";
-      const plan = fd.get("plan") || "";
-      const email = fd.get("email") || "";
-      const phone = fd.get("phone") || "";
-      const notes = fd.get("notes") || "";
-      const proofFile = (proof.files && proof.files[0]) ? proof.files[0].name : "Not selected";
-
-      const msg =
-`Hi AccesProNp! I want to order:
-Name: ${name}
-Product: ${product}
-Plan: ${plan}
-Email: ${email}
-My WhatsApp: ${phone}
-
-Payment: eSewa
-Paid to: 9812766213
-Screenshot file: ${proofFile}
-
-Notes: ${notes}
-
-I will attach the screenshot in WhatsApp now.`;
-
-      const url = "https://wa.me/9779744452908?text=" + encodeURIComponent(msg);
-      window.open(url, "_blank");
-    });
-  </script>
-</body>
-</html>
+      const produ
