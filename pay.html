@@ -1,4 +1,3 @@
-<!-- PAY.HTML FULL FILE -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -107,7 +106,7 @@
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
       border: 1px solid var(--border);
-      border-radius: var(--r);
+      border-radius: 18px;
       padding:16px;
       box-shadow: var(--shadow);
     }
@@ -224,6 +223,30 @@
     }
     .wa-btn:hover{transform: translateY(-2px)}
     .wa-btn span{font-size:22px; color:#04110b}
+
+    /* ✅ QR box */
+    .qrWrap{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      text-align:center;
+    }
+    [data-theme="dark"] .qrWrap{
+      background: rgba(255,255,255,.06);
+    }
+    .qrImg{
+      width: 100%;
+      max-width: 230px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+    .qrTitle{
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
   </style>
 </head>
 
@@ -295,8 +318,8 @@
           </div>
 
           <div class="field">
-            <label>Email / Account Username</label>
-            <input id="custAccount" type="text" placeholder="Gmail / Steam / Epic / Netflix username" />
+            <label>Email</label>
+            <input id="custAccount" type="text" placeholder="yourname@gmail.com" />
           </div>
 
           <div class="field">
@@ -326,15 +349,26 @@
             <b>✅ Payment Steps</b>
             <ol class="muted" style="margin-top:8px; padding-left:18px;">
               <li>Pay via eSewa / Khalti / FonePay ✅</li>
-              <li>Send payment screenshot on WhatsApp ✅</li>
-              <li>We activate / deliver instantly ⚡</li>
+              <li>Or pay using QR / Photo ✅</li>
+              <li>Click “Paid ✅” and upload screenshot on WhatsApp ✅</li>
             </ol>
 
-            <div class="row" style="margin-top:10px;">
+            <!-- ✅ QR IMAGE ADDED HERE -->
+            <div class="qrWrap">
+              <div class="qrTitle">Scan & Pay (eSewa QR) ✅</div>
+              <img class="qrImg" src="esewa-qr.png" alt="eSewa QR Code" />
+              <div class="tiny muted" style="margin-top:8px;">
+                After payment, click below to send screenshot ✅
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:12px;">
               <span class="pill">eSewa Pay: <span class="mono">9812766213</span></span>
+
+              <!-- ✅ NEW BUTTON -->
               <a class="btn btn-ghost btn-small" target="_blank"
-                href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20have%20paid.%20Here%20is%20my%20screenshot.">
-                Send Screenshot ✅
+                href="https://wa.me/9779744452908?text=Hi%20AccesProNp%20✅%0AI%20paid%20now%2C%20I%20am%20uploading%20the%20screenshot%20here%20✅">
+                ✅ Paid (Upload Screenshot)
               </a>
             </div>
           </div>
@@ -509,7 +543,7 @@
 
       const name = document.getElementById("custName").value.trim();
       const wa = document.getElementById("custWhatsApp").value.trim();
-      const account = document.getElementById("custAccount").value.trim();
+      const email = document.getElementById("custAccount").value.trim();
       const note = document.getElementById("custNote").value.trim();
 
       const msg =
@@ -522,7 +556,7 @@ I want to order:
 
 👤 Name: ${name || "-"}
 📱 WhatsApp: ${wa || "-"}
-📧 Account/Email: ${account || "-"}
+📧 Email: ${email || "-"}
 📝 Note: ${note || "-"}
 
 ✅ I will pay now and send screenshot.`;
