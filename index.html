@@ -25,7 +25,6 @@
       --btn2: rgba(0,0,0,.05);
     }
 
-    /* ✅ DARK MODE */
     [data-theme="dark"]{
       --bg:#070a12;
       --panel: rgba(255,255,255,.06);
@@ -34,7 +33,6 @@
       --muted:#a0a6b3;
       --border: rgba(255,255,255,.14);
       --shadow: 0 18px 60px rgba(0,0,0,.55);
-
       --btn2: rgba(255,255,255,.08);
     }
 
@@ -50,7 +48,6 @@
         var(--bg);
       overflow-x:hidden;
     }
-
     a{color:inherit;text-decoration:none}
     .container{width:min(1120px, 92vw); margin:0 auto}
 
@@ -60,19 +57,14 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    [data-theme="dark"] .header{
-      background: rgba(10,12,18,.78);
-    }
+    [data-theme="dark"] .header{ background: rgba(10,12,18,.78); }
 
     .header-row{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0; gap:12px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+
+    .brand{display:flex; align-items:center; gap:10px;}
     .brand img{
       width:46px; height:46px; object-fit:contain;
       border-radius:14px;
@@ -109,51 +101,6 @@
     .btn-small{padding:8px 10px; border-radius:12px; font-weight:750}
     .btn-block{width:100%}
 
-    .google-btn{
-      background: rgba(0,0,0,.05);
-      border: 1px solid rgba(0,0,0,.12);
-      color: var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.10);
-      cursor:pointer;
-    }
-    [data-theme="dark"] .google-btn{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.14);
-    }
-
-    .google-icon{
-      width:22px; height:22px;
-      background:#fff;
-      border-radius:6px;
-      display:grid;
-      place-items:center;
-      border: 1px solid rgba(0,0,0,.10);
-    }
-    .google-icon svg{width:16px;height:16px;display:block}
-    .google-text{
-      display:flex;
-      flex-direction:column;
-      line-height:1.05;
-      text-align:left;
-    }
-    .google-text b{font-size:13px}
-    .google-text span{font-size:11px; color: var(--muted)}
-
-    .auth{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .hero{padding:44px 0 18px}
-
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
       border: 1px solid var(--border);
@@ -176,8 +123,10 @@
     .tiny{font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
 
+    .hero{padding:44px 0 18px}
     .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+
     .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px; border-radius:999px;
@@ -186,9 +135,7 @@
       color: var(--muted);
       font-size:13px;
     }
-    [data-theme="dark"] .pill{
-      background: rgba(255,255,255,.06);
-    }
+    [data-theme="dark"] .pill{ background: rgba(255,255,255,.06); }
 
     .section{padding:38px 0}
 
@@ -209,11 +156,155 @@
       padding:9px;
       object-fit:contain;
     }
-    [data-theme="dark"] .icon{background: rgba(255,255,255,.06)}
+    [data-theme="dark"] .icon{ background: rgba(255,255,255,.06); }
 
     ul{margin:0; padding-left:18px}
     li{margin:6px 0}
 
+    /* Slider */
+    .slider-wrap{
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      box-shadow: var(--shadow);
+    }
+    [data-theme="dark"] .slider-wrap{ background: rgba(255,255,255,.06); }
+
+    .slider-track{
+      display: flex;
+      transition: transform .45s ease;
+      will-change: transform;
+    }
+    .slide{
+      min-width: 100%;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: center;
+    }
+    @media (max-width: 760px){
+      .slide{ grid-template-columns: 1fr; }
+    }
+
+    .slide-right{display:flex; justify-content:center; align-items:center;}
+    .product-card{
+      width: min(340px, 100%);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.90);
+      padding: 16px;
+      text-align:center;
+      box-shadow: 0 18px 60px rgba(0,0,0,.12);
+    }
+    [data-theme="dark"] .product-card{
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+    .product-card img{
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      background: rgba(0,0,0,.03);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    [data-theme="dark"] .product-card img{ background: rgba(255,255,255,.06); }
+    .product-card .name{font-weight: 900;font-size: 16px;margin-bottom: 6px;}
+
+    .slider-btn{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      color: #111;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      z-index: 5;
+      transition: transform .18s ease, background .18s ease;
+    }
+    [data-theme="dark"] .slider-btn{
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
+    .slider-btn:hover{
+      transform: translateY(-50%) scale(1.06);
+      background: rgba(255,255,255,.98);
+    }
+    [data-theme="dark"] .slider-btn:hover{ background: rgba(255,255,255,.13); }
+
+    .slider-btn.prev{left:12px;}
+    .slider-btn.next{right:12px;}
+    .slider-dots{
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      display:flex;
+      gap: 8px;
+      z-index: 6;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(0,0,0,.12);
+      cursor:pointer;
+      transition: all .2s ease;
+    }
+    [data-theme="dark"] .dot{
+      background: rgba(255,255,255,.25);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .dot.active{
+      width: 26px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+    }
+
+    /* ✅ Head row */
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+
+    /* Trust strip */
+    .trust-strip{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px){.trust-strip{grid-template-columns: repeat(2, 1fr)}}
+    @media (max-width: 520px){.trust-strip{grid-template-columns: 1fr}}
+    .trust-item{
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.08);
+    }
+    [data-theme="dark"] .trust-item{
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    .trust-item b{display:block; font-size:14px; margin-bottom:4px}
+    .trust-item span{font-size:12px; color: var(--muted)}
+
+    /* Reviews */
     .review-grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -222,16 +313,13 @@
     }
     @media (max-width: 980px){.review-grid{grid-template-columns: repeat(2, 1fr)}}
     @media (max-width: 620px){.review-grid{grid-template-columns: 1fr}}
-
     .review-card{
       padding:14px;
       border-radius:18px;
       border: 1px solid var(--border);
       background: rgba(0,0,0,.03);
     }
-    [data-theme="dark"] .review-card{
-      background: rgba(255,255,255,.06);
-    }
+    [data-theme="dark"] .review-card{ background: rgba(255,255,255,.06); }
 
     .review-head{
       display:flex;
@@ -264,241 +352,7 @@
     }
     .footer-row{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
 
-    /* MODAL */
-    .backdrop{
-      position:fixed; inset:0;
-      background:rgba(0,0,0,.35);
-      display:none; align-items:center; justify-content:center;
-      padding:18px; z-index:99;
-    }
-    .modal{
-      width:min(420px, 100%);
-      background: rgba(255,255,255,.98);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:16px;
-      box-shadow: var(--shadow);
-    }
-    [data-theme="dark"] .modal{
-      background: rgba(14,16,22,.98);
-    }
-    .modal h3{margin:0 0 12px 0}
-    .row2{display:grid; gap:6px; margin:10px 0}
-    label{font-size:12px; color: var(--muted)}
-    input{
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.12);
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-      outline:none;
-    }
-    [data-theme="dark"] input{
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-    }
-    input:focus{border-color: rgba(34,211,238,.75)}
-    .actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px}
-    .error{color:#ef4444; font-size:13px; min-height:18px}
-
-    /* SLIDER */
-    .slider-wrap{
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.75);
-      box-shadow: var(--shadow);
-    }
-    [data-theme="dark"] .slider-wrap{
-      background: rgba(255,255,255,.06);
-    }
-    .slider-track{
-      display: flex;
-      transition: transform .45s ease;
-      will-change: transform;
-    }
-    .slide{
-      min-width: 100%;
-      padding: 22px;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: center;
-    }
-    @media (max-width: 760px){
-      .slide{ grid-template-columns: 1fr; }
-    }
-    .slide-right{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .product-card{
-      width: min(340px, 100%);
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.90);
-      padding: 16px;
-      text-align:center;
-      box-shadow: 0 18px 60px rgba(0,0,0,.12);
-    }
-    [data-theme="dark"] .product-card{
-      background: rgba(255,255,255,.07);
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-    }
-    .product-card img{
-      width: 84px;
-      height: 84px;
-      object-fit: contain;
-      background: rgba(0,0,0,.03);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-    [data-theme="dark"] .product-card img{
-      background: rgba(255,255,255,.06);
-    }
-    .product-card .name{
-      font-weight: 900;
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .slider-btn{
-      position:absolute;
-      top:50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.85);
-      color: #111;
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      z-index: 5;
-      transition: transform .18s ease, background .18s ease;
-    }
-    [data-theme="dark"] .slider-btn{
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-    }
-    .slider-btn:hover{
-      transform: translateY(-50%) scale(1.06);
-      background: rgba(255,255,255,.98);
-    }
-    [data-theme="dark"] .slider-btn:hover{
-      background: rgba(255,255,255,.13);
-    }
-    .slider-btn.prev{left:12px;}
-    .slider-btn.next{right:12px;}
-
-    .slider-dots{
-      position:absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 12px;
-      display:flex;
-      gap: 8px;
-      z-index: 6;
-    }
-    .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.20);
-      border: 1px solid rgba(0,0,0,.12);
-      cursor:pointer;
-      transition: all .2s ease;
-    }
-    [data-theme="dark"] .dot{
-      background: rgba(255,255,255,.25);
-      border: 1px solid rgba(255,255,255,.16);
-    }
-    .dot.active{
-      width: 26px;
-      background: linear-gradient(135deg, var(--a1), var(--a2));
-    }
-
-    /* ✅ SALE BOX */
-    .offer-box{
-      display:grid;
-      gap:10px;
-      padding:16px;
-      border-radius:22px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.85);
-      box-shadow: var(--shadow);
-    }
-    [data-theme="dark"] .offer-box{
-      background: rgba(255,255,255,.06);
-    }
-    .offer-title{
-      font-weight:900;
-      font-size:18px;
-    }
-    .offer-badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    /* ✅ PAYMENT METHODS IMAGE */
-    .pay-methods-img{
-      width:100%;
-      max-width: 560px;
-      border-radius:16px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.85);
-      box-shadow: var(--shadow);
-      padding: 10px;
-    }
-    [data-theme="dark"] .pay-methods-img{
-      background: rgba(255,255,255,.06);
-    }
-
-    /* ✅ Hamrobazaar */
-    .hb-row{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      margin-top:12px;
-    }
-    .hb-logo{
-      height:32px;
-      width:auto;
-      object-fit:contain;
-    }
-
-    /* ✅ TRUST STRIP */
-    .trust-strip{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 16px;
-    }
-    @media (max-width: 900px){.trust-strip{grid-template-columns: repeat(2, 1fr)}}
-    @media (max-width: 520px){.trust-strip{grid-template-columns: 1fr}}
-    .trust-item{
-      border:1px solid var(--border);
-      background: rgba(0,0,0,.03);
-      padding: 12px;
-      border-radius: 18px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.08);
-    }
-    [data-theme="dark"] .trust-item{
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 12px 40px rgba(0,0,0,.35);
-    }
-    .trust-item b{display:block; font-size:14px; margin-bottom:4px}
-    .trust-item span{font-size:12px; color: var(--muted)}
-
-    /* ✅ FLOATING WHATSAPP SUPPORT */
+    /* WhatsApp floating */
     .wa-float{
       position: fixed;
       right: 18px;
@@ -518,9 +372,7 @@
       font-size:13px;
       color: var(--text);
     }
-    [data-theme="dark"] .wa-bubble{
-      background: rgba(255,255,255,.08);
-    }
+    [data-theme="dark"] .wa-bubble{ background: rgba(255,255,255,.08); }
     .wa-btn{
       width:54px;
       height:54px;
@@ -548,32 +400,18 @@
 
       <nav class="nav">
         <a href="#pricing">Pricing</a>
-        <a href="#why">Why Us</a>
+        <a href="games.html">Games</a>
+        <a href="entertainment.html">Entertainment</a>
         <a href="#reviews">Reviews</a>
         <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
       </nav>
 
-      <div class="auth">
-        <!-- ✅ Theme Toggle -->
+      <div class="row">
         <button class="btn btn-ghost btn-small" id="themeBtn" type="button">🌙 Dark</button>
-
-        <button class="google-btn" id="googleTopBtn" type="button" title="Sign in with Google">
-          <span class="google-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path fill="#EA4335" d="M24 9.5c3.54 0 6.76 1.22 9.32 3.62l6.98-6.98C36.08 2.17 30.42 0 24 0 14.62 0 6.51 5.38 2.56 13.22l8.14 6.33C12.5 13.6 17.77 9.5 24 9.5z"/>
-              <path fill="#4285F4" d="M46.1 24.5c0-1.64-.15-3.21-.43-4.74H24v9.02h12.4c-.54 2.91-2.18 5.38-4.65 7.04l7.2 5.59c4.2-3.88 6.15-9.6 6.15-16.91z"/>
-              <path fill="#FBBC05" d="M10.7 28.5c-.5-1.5-.78-3.1-.78-4.74s.28-3.24.78-4.74l-8.14-6.33C.92 15.98 0 19.86 0 23.76s.92 7.78 2.56 11.07l8.14-6.33z"/>
-              <path fill="#34A853" d="M24 48c6.42 0 11.81-2.12 15.75-5.76l-7.2-5.59c-2.0 1.35-4.57 2.15-8.55 2.15-6.23 0-11.5-4.1-13.3-9.64l-8.14 6.33C6.51 42.62 14.62 48 24 48z"/>
-            </svg>
-          </span>
-
-          <span class="google-text">
-            <b>Sign in with Google</b>
-            <span>Google Certified ✅</span>
-          </span>
-        </button>
-
-        <div id="authArea"></div>
+        <a class="btn btn-small" target="_blank"
+           href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
+          WhatsApp
+        </a>
       </div>
     </div>
   </header>
@@ -600,10 +438,7 @@
                 <div class="hero-actions">
                   <a class="btn" href="#pricing">See Pricing</a>
                   <a class="btn btn-ghost" href="pay.html">Go to Payment</a>
-                  <a class="btn btn-ghost" target="_blank"
-                     href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
-                    Hamrobazaar Profile ✅
-                  </a>
+                  <a class="btn btn-ghost" href="games.html">Games Store</a>
                   <a class="btn" target="_blank"
                      href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
                     WhatsApp Order
@@ -632,56 +467,20 @@
             </div>
 
             <!-- Slide 2 -->
-            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(29,185,84,.20), transparent 55%), rgba(255,255,255,.55);">
-              <div>
-                <h1>Grab the deal 🔥</h1>
-                <p class="muted" style="margin:0 0 14px 0;">
-                  Cheapest pricing • Limited time offers • Instant activation ✅
-                </p>
-
-                <div class="offer-box">
-                  <div class="offer-title">✅ Sale Offer Going On</div>
-                  <div class="offer-badges">
-                    <span class="pill">💸 Cheapest Pricing</span>
-                    <span class="pill">⏳ Limited Offers</span>
-                    <span class="pill">⚡ Fast Delivery</span>
-                  </div>
-
-                  <div class="hero-actions">
-                    <a class="btn" href="pay.html">Grab Now</a>
-                    <a class="btn btn-ghost" href="#pricing">See Deals</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="slide-right">
-                <div class="product-card">
-                  <img src="https://cdn.simpleicons.org/spotify" alt="Spotify">
-                  <div class="name">Spotify Platinum</div>
-                  <div class="tiny muted">Starting from</div>
-                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 899</div>
-                  <a class="btn btn-block" href="pay.html?product=Spotify%20Premium">Order Now</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- ✅ Slide 3 (Gemini) -->
             <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(59,130,246,.22), transparent 55%), rgba(255,255,255,.55);">
               <div>
                 <h1>Google Gemini AI + 2TB 🔥</h1>
                 <p class="muted" style="margin:0 0 14px 0;">
                   1 Year plan • 2TB Storage + Gemini AI • Best for creators ✅
                 </p>
-
                 <div class="hero-actions">
                   <a class="btn" href="pay.html?product=Google%20Gemini%201%20Year">Order Gemini</a>
                   <a class="btn btn-ghost" href="#pricing">See Pricing</a>
                 </div>
-
                 <div class="row" style="margin-top:16px">
                   <span class="pill">✅ 2TB Storage</span>
                   <span class="pill">✅ Gemini AI</span>
-                  <span class="pill">✅ 1 Year</span>
+                  <span class="pill">💰 Rs. 1999</span>
                 </div>
               </div>
 
@@ -696,34 +495,55 @@
               </div>
             </div>
 
-            <!-- ✅ Slide 4 (Perplexity + Discord + Crunchyroll promo) -->
-            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(168,85,247,.22), transparent 55%), rgba(255,255,255,.55);">
+            <!-- Slide 3 -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(34,197,94,.22), transparent 55%), rgba(255,255,255,.55);">
               <div>
-                <h1>AI + Gaming + Anime ✅</h1>
+                <h1>Games Store 🎮</h1>
                 <p class="muted" style="margin:0 0 14px 0;">
-                  Perplexity Pro • Discord Nitro • Crunchyroll yearly plans available ⚡
+                  GTA 5 • Minecraft • RDR 2 • Steam/Epic games available ✅
                 </p>
-
                 <div class="hero-actions">
-                  <a class="btn" href="pay.html?product=Perplexity%20Pro%201%20Year">Perplexity Pro</a>
-                  <a class="btn btn-ghost" href="pay.html?product=Discord%20Nitro%203%20Months">Discord Nitro</a>
-                  <a class="btn btn-ghost" href="pay.html?product=Crunchyroll%201%20Year">Crunchyroll</a>
+                  <a class="btn" href="games.html">Browse Games</a>
+                  <a class="btn btn-ghost" href="pay.html">Order Now</a>
                 </div>
-
                 <div class="row" style="margin-top:16px">
-                  <span class="pill">Perplexity 1 Year — Rs. 1799</span>
-                  <span class="pill">Discord 3 Months — Rs. 599</span>
-                  <span class="pill">Crunchyroll 1 Year — Rs. 1999</span>
+                  <span class="pill">✅ Own Account</span>
+                  <span class="pill">⚡ Fast Delivery</span>
+                  <span class="pill">💬 WhatsApp Support</span>
                 </div>
               </div>
 
               <div class="slide-right">
                 <div class="product-card">
-                  <img src="https://cdn.simpleicons.org/perplexity" alt="Perplexity">
-                  <div class="name">Perplexity Pro</div>
-                  <div class="tiny muted">1 Year Plan</div>
-                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 1799</div>
-                  <a class="btn btn-block" href="pay.html?product=Perplexity%20Pro%201%20Year">Order Now</a>
+                  <img src="https://cdn.simpleicons.org/steam" alt="Steam">
+                  <div class="name">Steam / Epic Game</div>
+                  <div class="tiny muted">Custom order</div>
+                  <div style="font-weight:900;font-size:18px;margin:8px 0 12px 0;">Ask price ✅</div>
+                  <a class="btn btn-block" href="games.html">Open Games</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(168,85,247,.22), transparent 55%), rgba(255,255,255,.55);">
+              <div>
+                <h1>Entertainment Pack 🎬</h1>
+                <p class="muted" style="margin:0 0 14px 0;">
+                  Netflix • Prime • YouTube • Crunchyroll • Discord Nitro ✅
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="entertainment.html">Browse Entertainment</a>
+                  <a class="btn btn-ghost" href="#pricing">Pricing</a>
+                </div>
+              </div>
+
+              <div class="slide-right">
+                <div class="product-card">
+                  <img src="https://cdn.simpleicons.org/crunchyroll" alt="Crunchyroll">
+                  <div class="name">Crunchyroll</div>
+                  <div class="tiny muted">1 Year</div>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 1999</div>
+                  <a class="btn btn-block" href="pay.html?product=Crunchyroll%201%20Year">Order Now</a>
                 </div>
               </div>
             </div>
@@ -733,24 +553,11 @@
           <div class="slider-dots" id="sliderDots"></div>
         </div>
 
-        <!-- ✅ TRUST STRIP -->
         <div class="trust-strip">
-          <div class="trust-item">
-            <b>✅ Legit Store</b>
-            <span>Trusted by Hamrobazaar customers</span>
-          </div>
-          <div class="trust-item">
-            <b>⚡ Fast Activation</b>
-            <span>Most services delivered within minutes</span>
-          </div>
-          <div class="trust-item">
-            <b>🔒 Safe & Secure</b>
-            <span>Secure activation + support</span>
-          </div>
-          <div class="trust-item">
-            <b>📞 WhatsApp Support</b>
-            <span>Instant help for ordering & issues</span>
-          </div>
+          <div class="trust-item"><b>✅ Legit Store</b><span>Trusted customers + support</span></div>
+          <div class="trust-item"><b>⚡ Fast Activation</b><span>Most orders done in minutes</span></div>
+          <div class="trust-item"><b>🔒 Safe & Secure</b><span>Secure activation process</span></div>
+          <div class="trust-item"><b>💬 WhatsApp Support</b><span>Instant help anytime</span></div>
         </div>
 
       </div>
@@ -759,7 +566,7 @@
     <!-- PRICING -->
     <section id="pricing" class="section">
       <div class="container">
-        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-end; margin-bottom:14px; flex-wrap:wrap">
+        <div class="section-head">
           <div>
             <h2>Pricing</h2>
             <div class="muted">Tap “Order” → choose plan on payment page.</div>
@@ -769,62 +576,52 @@
 
         <div class="grid">
 
-          <!-- Netflix -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Netflix" src="https://cdn.simpleicons.org/netflix" />
               <div>
                 <div style="font-weight:900;">Netflix</div>
-                <div class="muted tiny">Plans available on payment page</div>
+                <div class="muted tiny">Plans available</div>
               </div>
             </div>
             <ul class="muted">
               <li>1 Month — Rs. 349</li>
-              <li>2 Months — Rs. 549</li>
               <li>3 Months — Rs. 849</li>
-              <li>6 Months — Rs. 1549</li>
-              <li>9 Months — Rs. 2199</li>
               <li>1 Year — Rs. 2699</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Netflix">Order</a>
           </article>
 
-          <!-- Spotify -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Spotify Premium" src="https://cdn.simpleicons.org/spotify" />
               <div>
-                <div style="font-weight:900;">Spotify Platinum</div>
-                <div class="muted tiny">Premium activation</div>
+                <div style="font-weight:900;">Spotify Premium</div>
+                <div class="muted tiny">Platinum</div>
               </div>
             </div>
             <ul class="muted">
               <li>3 Months — Rs. 899</li>
-              <li>6 Months — Rs. 1,599</li>
-              <li>1 Year — Rs. 2,299</li>
+              <li>1 Year — Rs. 2299</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Spotify%20Premium">Order</a>
           </article>
 
-          <!-- YouTube -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="YouTube" src="https://cdn.simpleicons.org/youtube" />
               <div>
                 <div style="font-weight:900;">YouTube Premium</div>
-                <div class="muted tiny">Fast delivery</div>
+                <div class="muted tiny">No ads</div>
               </div>
             </div>
             <ul class="muted">
-              <li>1 Month — Rs. 199 (Out of stock)</li>
               <li>3 Months — Rs. 499</li>
-              <li>6 Months — Rs. 899</li>
               <li>1 Year — Rs. 1549</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=YouTube%20Premium">Order</a>
           </article>
 
-          <!-- Apple TV+ -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Apple TV+" src="https://cdn.simpleicons.org/apple" />
@@ -835,17 +632,14 @@
             </div>
             <ul class="muted">
               <li>1 Month — Rs. 329</li>
-              <li>3 Months — Rs. 849</li>
-              <li>6 Months — Rs. 1649</li>
               <li>1 Year — Rs. 3049</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Apple%20TV%2B">Order</a>
           </article>
 
-          <!-- ChatGPT Plus -->
           <article class="card">
             <div class="product-head">
-              <img class="icon" alt="ChatGPT / OpenAI" src="https://static.vecteezy.com/system/resources/previews/021/059/825/non_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg" />
+              <img class="icon" alt="ChatGPT" src="https://static.vecteezy.com/system/resources/previews/021/059/825/non_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg" />
               <div>
                 <div style="font-weight:900;">ChatGPT Plus</div>
                 <div class="muted tiny">Trusted activation</div>
@@ -853,21 +647,17 @@
             </div>
             <ul class="muted">
               <li>1 Month — Rs. 499</li>
-              <li>2 Months — Rs. 899</li>
-              <li>3 Months — Rs. 949</li>
-              <li>6 Months — Rs. 1349</li>
               <li>1 Year — Rs. 2849</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=ChatGPT%20Plus">Order</a>
           </article>
 
-          <!-- Prime Video -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Prime Video" src="https://1000logos.net/wp-content/uploads/2022/10/Amazon-Prime-Video-Logo.jpg" />
               <div>
                 <div style="font-weight:900;">Prime Video</div>
-                <div class="muted tiny">6 Months plan</div>
+                <div class="muted tiny">6 Months</div>
               </div>
             </div>
             <ul class="muted">
@@ -876,101 +666,80 @@
             <a class="btn btn-block" href="pay.html?product=Prime%20Video">Order</a>
           </article>
 
-          <!-- ✅ Google Gemini -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Google Gemini" src="https://cdn.simpleicons.org/google" />
               <div>
                 <div style="font-weight:900;">Google Gemini + 2TB</div>
-                <div class="muted tiny">1 Year (AI + Storage)</div>
+                <div class="muted tiny">1 Year</div>
               </div>
             </div>
             <ul class="muted">
               <li>1 Year — Rs. 1999</li>
-              <li>2TB Storage Included</li>
-              <li>Gemini AI Included</li>
+              <li>2TB Storage + Gemini AI ✅</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Google%20Gemini%201%20Year">Order</a>
           </article>
 
-          <!-- ✅ Perplexity -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Perplexity" src="https://cdn.simpleicons.org/perplexity" />
               <div>
                 <div style="font-weight:900;">Perplexity Pro</div>
-                <div class="muted tiny">1 Year (Research AI)</div>
+                <div class="muted tiny">1 Year</div>
               </div>
             </div>
             <ul class="muted">
               <li>1 Year — Rs. 1799</li>
-              <li>Fast activation ✅</li>
-              <li>Premium Pro features ✅</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Perplexity%20Pro%201%20Year">Order</a>
           </article>
 
-          <!-- ✅ Discord Nitro -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Discord" src="https://cdn.simpleicons.org/discord" />
               <div>
                 <div style="font-weight:900;">Discord Nitro</div>
-                <div class="muted tiny">Own account activation</div>
+                <div class="muted tiny">3 Months</div>
               </div>
             </div>
             <ul class="muted">
               <li>3 Months — Rs. 599</li>
-              <li>Safe method ✅</li>
-              <li>Support included ✅</li>
+              <li>Own account ✅</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Discord%20Nitro%203%20Months">Order</a>
           </article>
 
-          <!-- ✅ Crunchyroll -->
           <article class="card">
             <div class="product-head">
               <img class="icon" alt="Crunchyroll" src="https://cdn.simpleicons.org/crunchyroll" />
               <div>
                 <div style="font-weight:900;">Crunchyroll</div>
-                <div class="muted tiny">Anime Premium Plan</div>
+                <div class="muted tiny">1 Year</div>
               </div>
             </div>
             <ul class="muted">
               <li>1 Year — Rs. 1999</li>
-              <li>Premium streaming ✅</li>
-              <li>Instant activation ✅</li>
             </ul>
             <a class="btn btn-block" href="pay.html?product=Crunchyroll%201%20Year">Order</a>
           </article>
 
-        </div>
-      </div>
-    </section>
+          <!-- ✅ Games Quick Look in main -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="GTA V" src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" />
+              <div>
+                <div style="font-weight:900;">GTA 5</div>
+                <div class="muted tiny">PC Game</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>Price — Rs. 2199</li>
+              <li>Own account ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=GTA%205">Order</a>
+          </article>
 
-    <!-- ✅ WHY CHOOSE US -->
-    <section id="why" class="section">
-      <div class="container">
-        <div class="card">
-          <h2>Why Choose AccesProNp?</h2>
-          <p class="muted" style="margin-top:6px;">
-            We provide real subscriptions with trusted activation + full WhatsApp support.
-          </p>
-
-          <div class="grid" style="margin-top:14px;">
-            <div class="card" style="box-shadow:none; background:rgba(0,0,0,.03);">
-              <b>✅ Verified Store</b>
-              <div class="tiny muted" style="margin-top:6px;">Hamrobazaar reviews + trusted customers</div>
-            </div>
-            <div class="card" style="box-shadow:none; background:rgba(0,0,0,.03);">
-              <b>⚡ Fast Activation</b>
-              <div class="tiny muted" style="margin-top:6px;">Most orders completed in minutes</div>
-            </div>
-            <div class="card" style="box-shadow:none; background:rgba(0,0,0,.03);">
-              <b>💬 24/7 WhatsApp Support</b>
-              <div class="tiny muted" style="margin-top:6px;">Easy ordering + after-sales support</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -982,12 +751,12 @@
           <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-end; flex-wrap:wrap;">
             <div>
               <h2 style="margin:0;">Customer Reviews</h2>
-              <div class="muted tiny">Real Hamrobazaar customers • 5★ rated</div>
+              <div class="muted tiny">Real customers • 5★ rated</div>
             </div>
 
             <a class="btn btn-ghost btn-small" target="_blank"
                href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
-              View all reviews ✅
+              View Reviews ✅
             </a>
           </div>
 
@@ -997,7 +766,7 @@
                 <div class="review-name">Abhishek Shrestha</div>
                 <div class="stars">★★★★★</div>
               </div>
-              <div class="review-text">Immediate respond with quality service. i truly feels trust worthy customer experience.</div>
+              <div class="review-text">Immediate respond with quality service. trustworthy customer experience.</div>
             </div>
 
             <div class="review-card">
@@ -1018,62 +787,26 @@
           </div>
 
           <div class="tiny muted" style="margin-top:14px;">
-            Verified from Hamrobazaar profile • Fast activation • Trusted store ✅
-          </div>
-
-          <!-- PAYMENT METHODS + HAMROBAZAAR + CONTACT -->
-          <div style="margin-top:18px; display:grid; gap:14px;">
-            <div class="card" style="padding:14px;">
-              <div style="font-weight:900; font-size:16px;">Accepted Payments ✅</div>
-              <div class="muted tiny" style="margin:6px 0 10px 0;">
-                Pay using eSewa / Khalti / FonePay / IME Pay
-              </div>
-
-              <img class="pay-methods-img" src="payments.png" alt="Payment Methods">
-            </div>
-
-            <div class="card" style="padding:14px;">
-              <div class="hb-row">
-                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-                  <img class="hb-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Hamrobazar_logo.png/640px-Hamrobazar_logo.png" alt="Hamrobazaar">
-                  <div>
-                    <div style="font-weight:900;">Hamrobazaar Trusted ✅</div>
-                    <div class="muted tiny">Check my profile & reviews</div>
-                  </div>
-                </div>
-
-                <a class="btn btn-ghost" target="_blank"
-                   href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
-                  View Profile
-                </a>
-              </div>
-
-              <div style="margin-top:12px;">
-                <a class="btn btn-block" target="_blank"
-                   href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
-                  Contact Us on WhatsApp ✅
-                </a>
-              </div>
-            </div>
+            Trusted store • Fast activation • WhatsApp support ✅
           </div>
 
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> AccesProNp Trusted</span>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="#pricing" class="muted">Pricing</a>
-        <a href="#why" class="muted">Why Us</a>
-        <a href="pay.html" class="muted">Payment</a>
+      <div class="row">
+        <a class="muted" href="games.html">Games</a>
+        <a class="muted" href="entertainment.html">Entertainment</a>
+        <a class="muted" href="pay.html">Payment</a>
       </div>
     </div>
   </footer>
 
-  <!-- ✅ Floating WhatsApp Support -->
   <div class="wa-float">
     <div class="wa-bubble">Support</div>
     <a class="wa-btn" target="_blank"
@@ -1082,71 +815,9 @@
     </a>
   </div>
 
-  <!-- LOGIN MODAL -->
-  <div class="backdrop" id="loginBackdrop" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true">
-      <h3>Sign in</h3>
-
-      <div class="row2">
-        <label>Email</label>
-        <input id="email" type="email" placeholder="example@gmail.com" />
-      </div>
-
-      <div class="row2">
-        <label>Password</label>
-        <input id="password" type="password" placeholder="Enter password" />
-      </div>
-
-      <div class="error" id="authError"></div>
-
-      <div class="actions">
-        <button class="btn btn-ghost btn-small" id="closeBtn" type="button">Close</button>
-        <button class="btn btn-small" id="emailBtn" type="button">Continue</button>
-      </div>
-
-      <div class="tiny muted" style="margin-top:10px;">
-        Tip: You can sign in easily using Google from the top bar ✅
-      </div>
-    </div>
-  </div>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-    import {
-      getAuth,
-      onAuthStateChanged,
-      signInWithEmailAndPassword,
-      createUserWithEmailAndPassword,
-      GoogleAuthProvider,
-      signInWithPopup,
-      signOut
-    } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDLSSsacibl8A47UshbScBgtAOSxlddWgI",
-      authDomain: "accesspronp.firebaseapp.com",
-      projectId: "accesspronp",
-      storageBucket: "accesspronp.firebasestorage.app",
-      messagingSenderId: "400922708423",
-      appId: "1:400922708423:web:1179ac383ffe9c552231e2",
-      measurementId: "G-NHH5PG9LZY"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
+  <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const authArea = document.getElementById("authArea");
-    const loginBackdrop = document.getElementById("loginBackdrop");
-    const emailEl = document.getElementById("email");
-    const passwordEl = document.getElementById("password");
-    const authError = document.getElementById("authError");
-    const emailBtn = document.getElementById("emailBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const googleTopBtn = document.getElementById("googleTopBtn");
-
-    /* ✅ THEME TOGGLE */
     const themeBtn = document.getElementById("themeBtn");
     function applyTheme(t){
       document.documentElement.setAttribute("data-theme", t);
@@ -1161,72 +832,7 @@
       applyTheme(current === "dark" ? "light" : "dark");
     });
 
-    function openAuthModal(){
-      authError.textContent = "";
-      loginBackdrop.style.display = "flex";
-      loginBackdrop.setAttribute("aria-hidden", "false");
-      setTimeout(() => emailEl.focus(), 50);
-    }
-    function closeAuthModal(){
-      loginBackdrop.style.display = "none";
-      loginBackdrop.setAttribute("aria-hidden", "true");
-    }
-
-    async function googleSignIn(){
-      try{
-        const provider = new GoogleAuthProvider();
-        await signInWithPopup(auth, provider);
-      } catch (err){
-        alert(err.message);
-      }
-    }
-    googleTopBtn.addEventListener("click", googleSignIn);
-
-    emailBtn.addEventListener("click", async () => {
-      const email = emailEl.value.trim();
-      const password = passwordEl.value;
-
-      try{
-        try{
-          await signInWithEmailAndPassword(auth, email, password);
-        } catch (e) {
-          await createUserWithEmailAndPassword(auth, email, password);
-        }
-        closeAuthModal();
-      } catch(err){
-        authError.textContent = err.message;
-      }
-    });
-
-    closeBtn.addEventListener("click", closeAuthModal);
-
-    loginBackdrop.addEventListener("click", (e) => {
-      if(e.target === loginBackdrop) closeAuthModal();
-    });
-
-    onAuthStateChanged(auth, (user) => {
-      if(!user){
-        authArea.innerHTML = `
-          <button class="btn btn-ghost btn-small" id="openAuth">Sign in / Sign up</button>
-          <a class="btn btn-small" target="_blank"
-            href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
-            WhatsApp
-          </a>
-        `;
-        document.getElementById("openAuth").addEventListener("click", openAuthModal);
-        return;
-      }
-
-      const name = user.displayName || user.email;
-
-      authArea.innerHTML = `
-        <span class="pill">👤 <b>${name}</b></span>
-        <button class="btn btn-ghost btn-small" id="logoutBtn">Logout</button>
-      `;
-      document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
-    });
-
-    /* Slider JS */
+    /* Slider */
     const track = document.getElementById("sliderTrack");
     const slider = document.getElementById("heroSlider");
     const prevBtn = slider.querySelector(".prev");
@@ -1249,22 +855,18 @@
         dotsWrap.appendChild(d);
       });
     }
-
     function update(){
       track.style.transform = `translateX(-${index * 100}%)`;
       renderDots();
     }
-
     function next(){
       index = (index + 1) % slides.length;
       update();
     }
-
     function prev(){
       index = (index - 1 + slides.length) % slides.length;
       update();
     }
-
     function restartAuto(){
       clearInterval(autoTimer);
       autoTimer = setInterval(next, 3800);
@@ -1273,20 +875,8 @@
     nextBtn.addEventListener("click", () => { next(); restartAuto(); });
     prevBtn.addEventListener("click", () => { prev(); restartAuto(); });
 
-    let startX = 0;
-    track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, {passive:true});
-    track.addEventListener("touchend", (e) => {
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-      if(Math.abs(diff) > 50){
-        diff > 0 ? next() : prev();
-        restartAuto();
-      }
-    }, {passive:true});
-
     update();
     restartAuto();
   </script>
-
 </body>
 </html>

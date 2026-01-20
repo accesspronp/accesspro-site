@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AccesProNp — Games Store</title>
+  <meta name="description" content="AccesProNp — Games store in Nepal. Steam/Epic delivery." />
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --panel: rgba(0,0,0,.04);
+      --panel2: rgba(0,0,0,.02);
+      --text:#0b1020;
+      --muted:#4b5563;
+      --border: rgba(0,0,0,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.12);
+      --a1:#7C3AED;
+      --a2:#22D3EE;
+      --r:18px;
+      --btn: linear-gradient(135deg, var(--a1), var(--a2));
+      --btn2: rgba(0,0,0,.05);
+    }
+    [data-theme="dark"]{
+      --bg:#070a12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.04);
+      --text:#eef2ff;
+      --muted:#a0a6b3;
+      --border: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --btn2: rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1100px 600px at 15% 10%, rgba(124,58,237,.16), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34,211,238,.12), transparent 55%),
+        radial-gradient(900px 500px at 70% 100%, rgba(16,185,129,.10), transparent 55%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px, 92vw); margin:0 auto}
+
+    .header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="dark"] .header{ background: rgba(10,12,18,.78); }
+    .header-row{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0; gap:12px;
+    }
+    .brand img{
+      width:46px; height:46px; object-fit:contain;
+      border-radius:14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
+    }
+    .nav{display:flex; align-items:center; gap:16px}
+    .nav a{color: var(--muted)}
+    .nav a:hover{color: var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: var(--btn);
+      color:#071022;
+      font-weight:800;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+    }
+    .btn-ghost{background: var(--btn2); color: var(--text); box-shadow:none;}
+    .btn-small{padding:8px 10px; border-radius:12px; font-weight:750}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    [data-theme="dark"] .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+    }
+    h1{margin:0 0 8px 0; font-size:34px;}
+    .muted{color: var(--muted)}
+    .section{padding:34px 0}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){.grid{grid-template-columns: repeat(2, 1fr)}}
+    @media (max-width: 620px){.grid{grid-template-columns: 1fr}}
+
+    .product-head{display:flex; gap:12px; align-items:center; margin-bottom:10px}
+    .icon{
+      width:40px;height:40px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      padding:9px;
+      object-fit:contain;
+    }
+    [data-theme="dark"] .icon{ background: rgba(255,255,255,.06); }
+    ul{margin:0; padding-left:18px}
+    li{margin:6px 0}
+
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      color: var(--muted);
+      font-size:13px;
+    }
+    [data-theme="dark"] .pill{background: rgba(255,255,255,.06)}
+
+    .footer{
+      border-top: 1px solid var(--border);
+      padding:16px 0;
+      color: var(--muted);
+    }
+    .footer-row{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .wa-bubble{
+      padding:10px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      font-weight:800;
+      font-size:13px;
+      color: var(--text);
+    }
+    [data-theme="dark"] .wa-bubble{ background: rgba(255,255,255,.08); }
+    .wa-btn{
+      width:54px;height:54px;border-radius:999px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #25D366, #16a34a);
+      display:grid;place-items:center;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+    }
+    .wa-btn span{font-size:22px; color:#04110b}
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-row">
+      <a class="brand" href="index.html"><img src="logo.png" alt="AccesProNp"></a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
+      </nav>
+
+      <div class="row">
+        <button class="btn btn-ghost btn-small" id="themeBtn" type="button">🌙 Dark</button>
+        <a class="btn btn-small" target="_blank"
+           href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order%20a%20game.">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <div class="card" style="margin-bottom:14px;">
+        <h1>🎮 Games Store</h1>
+        <p class="muted" style="margin:0;">
+          Steam/Epic games • Own account delivery • Fast support ✅
+        </p>
+        <div class="row" style="margin-top:12px;">
+          <span class="pill">WhatsApp: 9744452908</span>
+          <span class="pill">eSewa: 9812766213</span>
+          <span class="pill">Instant delivery ⚡</span>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="product-head">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA 5">
+            <div>
+              <div style="font-weight:900;">GTA 5</div>
+              <div class="muted" style="font-size:12px;">PC Game (Own Account)</div>
+            </div>
+          </div>
+          <ul class="muted">
+            <li>Price: Rs. 2199</li>
+            <li>Delivery: Own account ✅</li>
+          </ul>
+          <a class="btn btn-block" href="pay.html?product=GTA%205">Order Now</a>
+        </article>
+
+        <article class="card">
+          <div class="product-head">
+            <img class="icon" src="https://cdn.simpleicons.org/minecraft" alt="Minecraft">
+            <div>
+              <div style="font-weight:900;">Minecraft</div>
+              <div class="muted" style="font-size:12px;">PC Edition</div>
+            </div>
+          </div>
+          <ul class="muted">
+            <li>Price: Rs. 1799</li>
+            <li>Own account ✅</li>
+          </ul>
+          <a class="btn btn-block" href="pay.html?product=Minecraft">Order Now</a>
+        </article>
+
+        <article class="card">
+          <div class="product-head">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" alt="RDR2">
+            <div>
+              <div style="font-weight:900;">RDR 2</div>
+              <div class="muted" style="font-size:12px;">PC Game (Own Account)</div>
+            </div>
+          </div>
+          <ul class="muted">
+            <li>Price: Rs. 2399</li>
+            <li>Own account ✅</li>
+          </ul>
+          <a class="btn btn-block" href="pay.html?product=RDR%202">Order Now</a>
+        </article>
+
+        <article class="card">
+          <div class="product-head">
+            <img class="icon" src="https://cdn.simpleicons.org/steam" alt="Steam">
+            <div>
+              <div style="font-weight:900;">Any Steam / Epic Game</div>
+              <div class="muted" style="font-size:12px;">INR Price + charge</div>
+            </div>
+          </div>
+          <ul class="muted">
+            <li>Buy in your own account ✅</li>
+            <li>Current INR pricing ✅</li>
+            <li>Service charge applies</li>
+          </ul>
+          <a class="btn btn-block" target="_blank"
+             href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20buy%20Steam%2FEpic%20game%20in%20my%20own%20account.%20Game%20name%3A%20____%20%7C%20INR%20price%3A%20____">
+            Ask Price on WhatsApp
+          </a>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> AccesProNp Trusted</span>
+      <a href="index.html" class="muted">Home</a>
+    </div>
+  </footer>
+
+  <div class="wa-float">
+    <div class="wa-bubble">Support</div>
+    <a class="wa-btn" target="_blank"
+      href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20need%20help%20about%20game%20order.">
+      <span>💬</span>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const themeBtn = document.getElementById("themeBtn");
+    function applyTheme(t){
+      document.documentElement.setAttribute("data-theme", t);
+      localStorage.setItem("theme", t);
+      themeBtn.textContent = (t === "dark") ? "☀️ Light" : "🌙 Dark";
+    }
+    applyTheme(localStorage.getItem("theme") || "light");
+    themeBtn.addEventListener("click", () => {
+      const cur = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(cur === "dark" ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
