@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AccesProNp — Subscriptions</title>
   <meta name="description" content="AccesProNp — subscriptions & digital services in Nepal." />
-
   <link rel="icon" type="image/png" href="logo.png">
 
   <style>
@@ -24,6 +23,19 @@
       --r:18px;
       --btn: linear-gradient(135deg, var(--a1), var(--a2));
       --btn2: rgba(0,0,0,.05);
+    }
+
+    /* ✅ DARK MODE */
+    [data-theme="dark"]{
+      --bg:#070a12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.04);
+      --text:#eef2ff;
+      --muted:#a0a6b3;
+      --border: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+
+      --btn2: rgba(255,255,255,.08);
     }
 
     *{box-sizing:border-box}
@@ -48,6 +60,10 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
+    [data-theme="dark"] .header{
+      background: rgba(10,12,18,.78);
+    }
+
     .header-row{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0; gap:12px;
@@ -105,6 +121,11 @@
       box-shadow: 0 14px 40px rgba(0,0,0,.10);
       cursor:pointer;
     }
+    [data-theme="dark"] .google-btn{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
     .google-icon{
       width:22px; height:22px;
       background:#fff;
@@ -140,6 +161,9 @@
       padding:16px;
       box-shadow: var(--shadow);
     }
+    [data-theme="dark"] .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+    }
 
     h1{
       font-size:44px; line-height:1.08;
@@ -162,6 +186,9 @@
       color: var(--muted);
       font-size:13px;
     }
+    [data-theme="dark"] .pill{
+      background: rgba(255,255,255,.06);
+    }
 
     .section{padding:38px 0}
 
@@ -180,7 +207,10 @@
       border:1px solid var(--border);
       background: rgba(0,0,0,.03);
       padding:9px;
+      object-fit:contain;
     }
+    [data-theme="dark"] .icon{background: rgba(255,255,255,.06)}
+
     ul{margin:0; padding-left:18px}
     li{margin:6px 0}
 
@@ -199,6 +229,10 @@
       border: 1px solid var(--border);
       background: rgba(0,0,0,.03);
     }
+    [data-theme="dark"] .review-card{
+      background: rgba(255,255,255,.06);
+    }
+
     .review-head{
       display:flex;
       justify-content:space-between;
@@ -239,11 +273,14 @@
     }
     .modal{
       width:min(420px, 100%);
-      background:#ffffff;
+      background: rgba(255,255,255,.98);
       border:1px solid var(--border);
       border-radius:18px;
       padding:16px;
       box-shadow: var(--shadow);
+    }
+    [data-theme="dark"] .modal{
+      background: rgba(14,16,22,.98);
     }
     .modal h3{margin:0 0 12px 0}
     .row2{display:grid; gap:6px; margin:10px 0}
@@ -255,6 +292,10 @@
       background: rgba(0,0,0,.03);
       color: var(--text);
       outline:none;
+    }
+    [data-theme="dark"] input{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
     }
     input:focus{border-color: rgba(34,211,238,.75)}
     .actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px}
@@ -268,6 +309,9 @@
       border: 1px solid var(--border);
       background: rgba(255,255,255,.75);
       box-shadow: var(--shadow);
+    }
+    [data-theme="dark"] .slider-wrap{
+      background: rgba(255,255,255,.06);
     }
     .slider-track{
       display: flex;
@@ -285,21 +329,6 @@
     @media (max-width: 760px){
       .slide{ grid-template-columns: 1fr; }
     }
-    .slide-tags{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 10px;
-      margin-bottom: 12px;
-    }
-    .tag{
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.03);
-      border: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--muted);
-    }
     .slide-right{
       display:flex;
       justify-content:center;
@@ -314,6 +343,10 @@
       text-align:center;
       box-shadow: 0 18px 60px rgba(0,0,0,.12);
     }
+    [data-theme="dark"] .product-card{
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
     .product-card img{
       width: 84px;
       height: 84px;
@@ -324,11 +357,15 @@
       padding: 14px;
       margin-bottom: 12px;
     }
+    [data-theme="dark"] .product-card img{
+      background: rgba(255,255,255,.06);
+    }
     .product-card .name{
       font-weight: 900;
       font-size: 16px;
       margin-bottom: 6px;
     }
+
     .slider-btn{
       position:absolute;
       top:50%;
@@ -345,12 +382,20 @@
       z-index: 5;
       transition: transform .18s ease, background .18s ease;
     }
+    [data-theme="dark"] .slider-btn{
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
     .slider-btn:hover{
       transform: translateY(-50%) scale(1.06);
       background: rgba(255,255,255,.98);
     }
+    [data-theme="dark"] .slider-btn:hover{
+      background: rgba(255,255,255,.13);
+    }
     .slider-btn.prev{left:12px;}
     .slider-btn.next{right:12px;}
+
     .slider-dots{
       position:absolute;
       left: 50%;
@@ -369,6 +414,10 @@
       cursor:pointer;
       transition: all .2s ease;
     }
+    [data-theme="dark"] .dot{
+      background: rgba(255,255,255,.25);
+      border: 1px solid rgba(255,255,255,.16);
+    }
     .dot.active{
       width: 26px;
       background: linear-gradient(135deg, var(--a1), var(--a2));
@@ -383,6 +432,9 @@
       border:1px solid var(--border);
       background: rgba(255,255,255,.85);
       box-shadow: var(--shadow);
+    }
+    [data-theme="dark"] .offer-box{
+      background: rgba(255,255,255,.06);
     }
     .offer-title{
       font-weight:900;
@@ -404,6 +456,9 @@
       box-shadow: var(--shadow);
       padding: 10px;
     }
+    [data-theme="dark"] .pay-methods-img{
+      background: rgba(255,255,255,.06);
+    }
 
     /* ✅ Hamrobazaar */
     .hb-row{
@@ -419,6 +474,67 @@
       width:auto;
       object-fit:contain;
     }
+
+    /* ✅ TRUST STRIP */
+    .trust-strip{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px){.trust-strip{grid-template-columns: repeat(2, 1fr)}}
+    @media (max-width: 520px){.trust-strip{grid-template-columns: 1fr}}
+    .trust-item{
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.08);
+    }
+    [data-theme="dark"] .trust-item{
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    .trust-item b{display:block; font-size:14px; margin-bottom:4px}
+    .trust-item span{font-size:12px; color: var(--muted)}
+
+    /* ✅ FLOATING WHATSAPP SUPPORT */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .wa-bubble{
+      padding:10px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      font-weight:800;
+      font-size:13px;
+      color: var(--text);
+    }
+    [data-theme="dark"] .wa-bubble{
+      background: rgba(255,255,255,.08);
+    }
+    .wa-btn{
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #25D366, #16a34a);
+      display:grid;
+      place-items:center;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      transition: transform .18s ease;
+    }
+    .wa-btn:hover{transform: translateY(-2px)}
+    .wa-btn span{font-size:22px; color:#04110b}
   </style>
 </head>
 
@@ -432,11 +548,15 @@
 
       <nav class="nav">
         <a href="#pricing">Pricing</a>
+        <a href="#why">Why Us</a>
         <a href="#reviews">Reviews</a>
         <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
       </nav>
 
       <div class="auth">
+        <!-- ✅ Theme Toggle -->
+        <button class="btn btn-ghost btn-small" id="themeBtn" type="button">🌙 Dark</button>
+
         <button class="google-btn" id="googleTopBtn" type="button" title="Sign in with Google">
           <span class="google-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48">
@@ -545,9 +665,92 @@
               </div>
             </div>
 
+            <!-- ✅ Slide 3 (Gemini) -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(59,130,246,.22), transparent 55%), rgba(255,255,255,.55);">
+              <div>
+                <h1>Google Gemini AI + 2TB 🔥</h1>
+                <p class="muted" style="margin:0 0 14px 0;">
+                  1 Year plan • 2TB Storage + Gemini AI • Best for creators ✅
+                </p>
+
+                <div class="hero-actions">
+                  <a class="btn" href="pay.html?product=Google%20Gemini%201%20Year">Order Gemini</a>
+                  <a class="btn btn-ghost" href="#pricing">See Pricing</a>
+                </div>
+
+                <div class="row" style="margin-top:16px">
+                  <span class="pill">✅ 2TB Storage</span>
+                  <span class="pill">✅ Gemini AI</span>
+                  <span class="pill">✅ 1 Year</span>
+                </div>
+              </div>
+
+              <div class="slide-right">
+                <div class="product-card">
+                  <img src="https://cdn.simpleicons.org/google" alt="Google Gemini">
+                  <div class="name">Gemini + 2TB</div>
+                  <div class="tiny muted">1 Year</div>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 1999</div>
+                  <a class="btn btn-block" href="pay.html?product=Google%20Gemini%201%20Year">Order Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ Slide 4 (Perplexity + Discord + Crunchyroll promo) -->
+            <div class="slide" style="background: radial-gradient(700px 400px at 15% 20%, rgba(168,85,247,.22), transparent 55%), rgba(255,255,255,.55);">
+              <div>
+                <h1>AI + Gaming + Anime ✅</h1>
+                <p class="muted" style="margin:0 0 14px 0;">
+                  Perplexity Pro • Discord Nitro • Crunchyroll yearly plans available ⚡
+                </p>
+
+                <div class="hero-actions">
+                  <a class="btn" href="pay.html?product=Perplexity%20Pro%201%20Year">Perplexity Pro</a>
+                  <a class="btn btn-ghost" href="pay.html?product=Discord%20Nitro%203%20Months">Discord Nitro</a>
+                  <a class="btn btn-ghost" href="pay.html?product=Crunchyroll%201%20Year">Crunchyroll</a>
+                </div>
+
+                <div class="row" style="margin-top:16px">
+                  <span class="pill">Perplexity 1 Year — Rs. 1799</span>
+                  <span class="pill">Discord 3 Months — Rs. 599</span>
+                  <span class="pill">Crunchyroll 1 Year — Rs. 1999</span>
+                </div>
+              </div>
+
+              <div class="slide-right">
+                <div class="product-card">
+                  <img src="https://cdn.simpleicons.org/perplexity" alt="Perplexity">
+                  <div class="name">Perplexity Pro</div>
+                  <div class="tiny muted">1 Year Plan</div>
+                  <div style="font-weight:900;font-size:20px;margin:8px 0 12px 0;">Rs. 1799</div>
+                  <a class="btn btn-block" href="pay.html?product=Perplexity%20Pro%201%20Year">Order Now</a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="slider-dots" id="sliderDots"></div>
+        </div>
+
+        <!-- ✅ TRUST STRIP -->
+        <div class="trust-strip">
+          <div class="trust-item">
+            <b>✅ Legit Store</b>
+            <span>Trusted by Hamrobazaar customers</span>
+          </div>
+          <div class="trust-item">
+            <b>⚡ Fast Activation</b>
+            <span>Most services delivered within minutes</span>
+          </div>
+          <div class="trust-item">
+            <b>🔒 Safe & Secure</b>
+            <span>Secure activation + support</span>
+          </div>
+          <div class="trust-item">
+            <b>📞 WhatsApp Support</b>
+            <span>Instant help for ordering & issues</span>
+          </div>
         </div>
 
       </div>
@@ -673,6 +876,101 @@
             <a class="btn btn-block" href="pay.html?product=Prime%20Video">Order</a>
           </article>
 
+          <!-- ✅ Google Gemini -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Google Gemini" src="https://cdn.simpleicons.org/google" />
+              <div>
+                <div style="font-weight:900;">Google Gemini + 2TB</div>
+                <div class="muted tiny">1 Year (AI + Storage)</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>1 Year — Rs. 1999</li>
+              <li>2TB Storage Included</li>
+              <li>Gemini AI Included</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Google%20Gemini%201%20Year">Order</a>
+          </article>
+
+          <!-- ✅ Perplexity -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Perplexity" src="https://cdn.simpleicons.org/perplexity" />
+              <div>
+                <div style="font-weight:900;">Perplexity Pro</div>
+                <div class="muted tiny">1 Year (Research AI)</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>1 Year — Rs. 1799</li>
+              <li>Fast activation ✅</li>
+              <li>Premium Pro features ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Perplexity%20Pro%201%20Year">Order</a>
+          </article>
+
+          <!-- ✅ Discord Nitro -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Discord" src="https://cdn.simpleicons.org/discord" />
+              <div>
+                <div style="font-weight:900;">Discord Nitro</div>
+                <div class="muted tiny">Own account activation</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>3 Months — Rs. 599</li>
+              <li>Safe method ✅</li>
+              <li>Support included ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Discord%20Nitro%203%20Months">Order</a>
+          </article>
+
+          <!-- ✅ Crunchyroll -->
+          <article class="card">
+            <div class="product-head">
+              <img class="icon" alt="Crunchyroll" src="https://cdn.simpleicons.org/crunchyroll" />
+              <div>
+                <div style="font-weight:900;">Crunchyroll</div>
+                <div class="muted tiny">Anime Premium Plan</div>
+              </div>
+            </div>
+            <ul class="muted">
+              <li>1 Year — Rs. 1999</li>
+              <li>Premium streaming ✅</li>
+              <li>Instant activation ✅</li>
+            </ul>
+            <a class="btn btn-block" href="pay.html?product=Crunchyroll%201%20Year">Order</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ WHY CHOOSE US -->
+    <section id="why" class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Why Choose AccesProNp?</h2>
+          <p class="muted" style="margin-top:6px;">
+            We provide real subscriptions with trusted activation + full WhatsApp support.
+          </p>
+
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="box-shadow:none; background:rgba(0,0,0,.03);">
+              <b>✅ Verified Store</b>
+              <div class="tiny muted" style="margin-top:6px;">Hamrobazaar reviews + trusted customers</div>
+            </div>
+            <div class="card" style="box-shadow:none; background:rgba(0,0,0,.03);">
+              <b>⚡ Fast Activation</b>
+              <div class="tiny muted" style="margin-top:6px;">Most orders completed in minutes</div>
+            </div>
+            <div class="card" style="box-shadow:none; background:rgba(0,0,0,.03);">
+              <b>💬 24/7 WhatsApp Support</b>
+              <div class="tiny muted" style="margin-top:6px;">Easy ordering + after-sales support</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -723,7 +1021,7 @@
             Verified from Hamrobazaar profile • Fast activation • Trusted store ✅
           </div>
 
-          <!-- ✅ PAYMENT METHODS + HAMROBAZAAR + CONTACT -->
+          <!-- PAYMENT METHODS + HAMROBAZAAR + CONTACT -->
           <div style="margin-top:18px; display:grid; gap:14px;">
             <div class="card" style="padding:14px;">
               <div style="font-weight:900; font-size:16px;">Accepted Payments ✅</div>
@@ -731,7 +1029,6 @@
                 Pay using eSewa / Khalti / FonePay / IME Pay
               </div>
 
-              <!-- ✅ Put the image file in same folder as index.html -->
               <img class="pay-methods-img" src="payments.png" alt="Payment Methods">
             </div>
 
@@ -768,11 +1065,24 @@
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> AccesProNp Trusted</span>
-      <a href="pay.html" class="muted">Payment</a>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#pricing" class="muted">Pricing</a>
+        <a href="#why" class="muted">Why Us</a>
+        <a href="pay.html" class="muted">Payment</a>
+      </div>
     </div>
   </footer>
 
-  <!-- ✅ LOGIN MODAL -->
+  <!-- ✅ Floating WhatsApp Support -->
+  <div class="wa-float">
+    <div class="wa-bubble">Support</div>
+    <a class="wa-btn" target="_blank"
+      href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20need%20help.">
+      <span>💬</span>
+    </a>
+  </div>
+
+  <!-- LOGIN MODAL -->
   <div class="backdrop" id="loginBackdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true">
       <h3>Sign in</h3>
@@ -835,6 +1145,21 @@
     const emailBtn = document.getElementById("emailBtn");
     const closeBtn = document.getElementById("closeBtn");
     const googleTopBtn = document.getElementById("googleTopBtn");
+
+    /* ✅ THEME TOGGLE */
+    const themeBtn = document.getElementById("themeBtn");
+    function applyTheme(t){
+      document.documentElement.setAttribute("data-theme", t);
+      localStorage.setItem("theme", t);
+      themeBtn.textContent = (t === "dark") ? "☀️ Light" : "🌙 Dark";
+    }
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyTheme(savedTheme);
+
+    themeBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
 
     function openAuthModal(){
       authError.textContent = "";
@@ -965,4 +1290,3 @@
 
 </body>
 </html>
-
