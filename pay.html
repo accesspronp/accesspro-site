@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Payment — AccesProNp</title>
-  <meta name="description" content="Pay via eSewa and place your order." />
+  <title>AccesProNp — Pay / Order</title>
+  <meta name="description" content="AccesProNp — Pay and order subscriptions in Nepal." />
+  <link rel="icon" type="image/png" href="logo.png">
 
   <style>
     :root{
@@ -18,11 +19,22 @@
 
       --a1:#7C3AED;
       --a2:#22D3EE;
-      --a3:#10B981;
 
       --r:18px;
       --btn: linear-gradient(135deg, var(--a1), var(--a2));
       --btn2: rgba(0,0,0,.05);
+    }
+
+    /* ✅ DARK MODE */
+    [data-theme="dark"]{
+      --bg:#070a12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.04);
+      --text:#eef2ff;
+      --muted:#a0a6b3;
+      --border: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --btn2: rgba(255,255,255,.08);
     }
 
     *{box-sizing:border-box}
@@ -47,10 +59,13 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
+    [data-theme="dark"] .header{ background: rgba(10,12,18,.78); }
+
     .header-row{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0; gap:12px;
     }
+    .brand{display:flex; align-items:center; gap:10px}
     .brand img{
       width:46px; height:46px; object-fit:contain;
       border-radius:14px;
@@ -58,10 +73,10 @@
       border: 1px solid var(--border);
       box-shadow: 0 10px 30px rgba(0,0,0,.10);
     }
+
     .nav{display:flex; align-items:center; gap:16px}
     .nav a{color: var(--muted)}
     .nav a:hover{color: var(--text)}
-    @media (max-width: 900px){ .nav{display:none} }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -74,14 +89,20 @@
       box-shadow: var(--shadow);
       transition: transform .18s ease, filter .18s ease;
       cursor:pointer;
-      will-change: transform;
+      user-select:none;
+      white-space:nowrap;
     }
     .btn:hover{transform: translateY(-2px); filter:brightness(1.05)}
     .btn:active{transform: translateY(0px) scale(.99)}
-    .btn-ghost{background: var(--btn2); color: var(--text); box-shadow:none}
-    .btn-block{width:100%}
+    .btn-ghost{
+      background: var(--btn2);
+      color: var(--text);
+      box-shadow: none;
+    }
     .btn-small{padding:8px 10px; border-radius:12px; font-weight:750}
+    .btn-block{width:100%}
 
+    .section{padding:34px 0}
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.70));
       border: 1px solid var(--border);
@@ -89,57 +110,55 @@
       padding:16px;
       box-shadow: var(--shadow);
     }
+    [data-theme="dark"] .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+    }
 
-    .section{padding:38px 0}
-    h1{margin:0 0 8px 0; font-size:34px; letter-spacing:-.01em}
-    h2{margin:0 0 10px 0; font-size:22px}
-    .muted{color:var(--muted)}
+    h1{
+      font-size:36px;
+      margin:0 0 10px 0;
+      letter-spacing:-.02em;
+    }
+    @media(max-width:520px){h1{font-size:28px}}
+    h2{margin:0 0 8px 0; font-size:22px}
+    .muted{color: var(--muted)}
     .tiny{font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
 
-    .two-col{
+    .grid2{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:14px;
+      gap: 14px;
       align-items:start;
     }
-    @media (max-width: 900px){.two-col{grid-template-columns:1fr}}
+    @media(max-width:900px){
+      .grid2{grid-template-columns:1fr}
+    }
 
-    form{display:grid; gap:12px; margin-top:12px}
-    label{display:grid; gap:6px; font-weight:700}
-
-    input,textarea,select{
+    label{font-size:12px; color: var(--muted)}
+    input, select, textarea{
+      width:100%;
       padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.12);
       background: rgba(0,0,0,.03);
       color: var(--text);
       outline:none;
+      font-size:14px;
     }
-    input:focus,textarea:focus,select:focus{border-color: rgba(34,211,238,.75)}
+    [data-theme="dark"] input,
+    [data-theme="dark"] select,
+    [data-theme="dark"] textarea{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+    }
+    input:focus, select:focus, textarea:focus{border-color: rgba(34,211,238,.75)}
 
-    /* ✅✅ FIX: DROPDOWN OPTIONS VISIBLE */
-    select option{
-      color:#0b1020 !important;
-      background:#ffffff !important;
-    }
+    textarea{min-height:92px; resize: vertical}
 
-    .pay-box{
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:12px;
-      margin:12px 0;
-      background: rgba(0,0,0,.02);
-    }
-    .qr{
-      width:100%;
-      max-width:270px;
-      border-radius:16px;
-      border:1px solid var(--border);
-      background: rgba(0,0,0,.02);
-    }
-    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between}
-    .chip{
+    .field{display:grid; gap:6px; margin:10px 0}
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px; border-radius:999px;
       border: 1px solid var(--border);
@@ -147,314 +166,419 @@
       color: var(--muted);
       font-size:13px;
     }
+    [data-theme="dark"] .pill{background: rgba(255,255,255,.06)}
 
-    .hint{
-      border-left: 3px solid rgba(34,211,238,.65);
-      padding:10px 12px;
-      border-radius: 12px;
-      background: rgba(34,211,238,.10);
-      color: var(--muted);
-      font-size:13px;
+    .summary{
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.03);
+      padding: 14px;
     }
+    [data-theme="dark"] .summary{background: rgba(255,255,255,.06)}
 
-    .pay-methods-img{
-      width:100%;
-      max-width: 520px;
-      border-radius:16px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.85);
-      box-shadow: var(--shadow);
-      padding: 10px;
-    }
-
-    .hb-row{
+    .summary .line{
       display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
       justify-content:space-between;
-      margin-top:12px;
+      gap:10px;
+      margin: 8px 0;
+      font-size: 14px;
     }
-    .hb-logo{
-      height:32px;
-      width:auto;
-      object-fit:contain;
+    .summary .total{
+      font-weight: 900;
+      font-size: 18px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
     }
+
+    .copy-wrap{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .footer{
+      border-top: 1px solid var(--border);
+      padding:16px 0;
+      color: var(--muted);
+    }
+    .footer-row{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+
+    /* ✅ Floating WhatsApp Support */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .wa-bubble{
+      padding:10px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      font-weight:800;
+      font-size:13px;
+      color: var(--text);
+    }
+    [data-theme="dark"] .wa-bubble{
+      background: rgba(255,255,255,.08);
+    }
+    .wa-btn{
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #25D366, #16a34a);
+      display:grid;
+      place-items:center;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      transition: transform .18s ease;
+    }
+    .wa-btn:hover{transform: translateY(-2px)}
+    .wa-btn span{font-size:22px; color:#04110b}
   </style>
 </head>
 
 <body>
+
   <header class="header">
     <div class="container header-row">
-      <a href="index.html" aria-label="Home" class="brand">
+      <a class="brand" href="index.html" aria-label="Home">
         <img src="logo.png" alt="AccesProNp Logo" />
       </a>
 
       <nav class="nav">
         <a href="index.html#pricing">Pricing</a>
         <a href="index.html#reviews">Reviews</a>
+        <a href="pay.html" class="btn btn-ghost">Pay / Order</a>
       </nav>
 
-      <a class="btn" target="_blank"
-         href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
-        WhatsApp
-      </a>
+      <div class="row">
+        <button class="btn btn-ghost btn-small" id="themeBtn" type="button">🌙 Dark</button>
+        <a class="btn btn-small" target="_blank"
+           href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20want%20to%20order.">
+          WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="section">
-    <div class="container two-col">
-      <section class="card">
-        <h1>Payment / Order</h1>
+    <div class="container">
+
+      <div class="card" style="margin-bottom:14px;">
+        <h1>Pay / Order ✅</h1>
         <p class="muted" style="margin:0;">
-          Select product + plan → then it opens WhatsApp with your order message.
+          Choose product → fill your details → pay via eSewa → send screenshot on WhatsApp → activation ✅
         </p>
 
-        <div class="hint" style="margin-top:12px;">
-          Website can’t auto-send images to WhatsApp. After WhatsApp opens, <b>attach your screenshot</b> in chat ✅
+        <div class="row" style="margin-top:12px;">
+          <span class="pill">WhatsApp: <span class="mono">9744452908</span></span>
+          <span class="pill">eSewa Pay: <span class="mono" id="esewaNumText">9812766213</span></span>
+          <span class="pill">Fast Delivery ⚡</span>
         </div>
+      </div>
 
-        <div class="pay-box">
-          <div style="font-weight:900;">🔥 Grab the deal</div>
-          <div class="muted tiny" style="margin-top:6px;">
-            Cheapest pricing • Limited offers • Fast activation ✅
+      <div class="grid2">
+
+        <!-- ✅ ORDER FORM -->
+        <div class="card">
+          <h2>Order Details</h2>
+          <p class="muted tiny" style="margin-top:6px;">Select product and plan. Price updates automatically.</p>
+
+          <div class="field">
+            <label>Product</label>
+            <select id="productSelect"></select>
+          </div>
+
+          <div class="field">
+            <label>Plan / Duration</label>
+            <select id="planSelect"></select>
+          </div>
+
+          <div class="field">
+            <label>Your Name</label>
+            <input id="custName" type="text" placeholder="Your full name" />
+          </div>
+
+          <div class="field">
+            <label>WhatsApp Number</label>
+            <input id="custWhatsApp" type="tel" placeholder="98XXXXXXXX" />
+          </div>
+
+          <div class="field">
+            <label>Email / Account Username</label>
+            <input id="custAccount" type="text" placeholder="Gmail / Spotify / Discord / Netflix username" />
+          </div>
+
+          <div class="field">
+            <label>Extra Note (optional)</label>
+            <textarea id="custNote" placeholder="Example: I want activation in my own account"></textarea>
+          </div>
+
+          <div class="row" style="margin-top:14px;">
+            <button class="btn btn-ghost btn-small" id="copyEsewaBtn" type="button">📋 Copy eSewa Number</button>
+            <span class="tiny muted" id="copyMsg"></span>
+          </div>
+
+          <div style="margin-top:14px;">
+            <button class="btn btn-block" id="whatsappOrderBtn" type="button">✅ Send Order on WhatsApp</button>
+          </div>
+
+          <div class="tiny muted" style="margin-top:10px;">
+            After payment, send screenshot on WhatsApp for activation ✅
           </div>
         </div>
 
-        <form id="orderForm">
-          <label>
-            Your Name
-            <input required name="name" placeholder="Your name" />
-          </label>
-
-          <label>
-            Product
-            <select required name="product" id="product"></select>
-          </label>
-
-          <label>
-            Plan
-            <select required name="plan" id="plan"></select>
-          </label>
-
-          <label>
-            Gmail / Email (for activation)
-            <input name="email" type="email" placeholder="yourmail@gmail.com" />
-          </label>
-
-          <label>
-            Your WhatsApp Number
-            <input name="phone" placeholder="98XXXXXXXX" />
-          </label>
-
-          <label>
-            Payment Screenshot (choose file)
-            <input name="proof" id="proof" type="file" accept="image/*" />
-          </label>
-          <div class="tiny muted" id="proofName">No file selected.</div>
-
-          <label>
-            Notes (optional)
-            <textarea name="notes" rows="3" placeholder="Any extra info..."></textarea>
-          </label>
-
-          <button class="btn btn-block" type="submit">Payment Done ✅ Send Order on WhatsApp</button>
-        </form>
-
-        <div class="hb-row" style="margin-top:18px;">
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <img class="hb-logo" src="hamrobazaar.png" alt="Hamrobazaar">
-            <div>
-              <div style="font-weight:900;">Hamrobazaar Trusted ✅</div>
-              <div class="muted tiny">Check profile & reviews</div>
+        <!-- ✅ SUMMARY + PAYMENT INFO -->
+        <div class="card">
+          <h2>Order Summary</h2>
+          <div class="summary">
+            <div class="line">
+              <span class="muted">Product</span>
+              <b id="sumProduct">—</b>
+            </div>
+            <div class="line">
+              <span class="muted">Plan</span>
+              <b id="sumPlan">—</b>
+            </div>
+            <div class="line">
+              <span class="muted">Price</span>
+              <b id="sumPrice">Rs. 0</b>
+            </div>
+            <div class="line total">
+              <span>Total</span>
+              <span id="sumTotal">Rs. 0</span>
             </div>
           </div>
 
-          <a class="btn btn-ghost" target="_blank"
-             href="https://hamrobazaar.com/user/27704422-58AD-4BFF-B5F5-3A41B0E9CE0D">
-            View Profile
-          </a>
-        </div>
+          <div class="card" style="margin-top:14px; padding:14px; box-shadow:none; background:rgba(0,0,0,.03);">
+            <b>✅ Payment Steps</b>
+            <ol class="muted" style="margin-top:8px; padding-left:18px;">
+              <li>Pay via eSewa / Khalti / FonePay ✅</li>
+              <li>Send payment screenshot on WhatsApp ✅</li>
+              <li>We activate your subscription instantly ⚡</li>
+            </ol>
 
-        <div style="margin-top:12px;">
-          <a class="btn btn-block" target="_blank"
-             href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20have%20paid%20and%20want%20activation.">
-            Contact Us on WhatsApp ✅
-          </a>
-        </div>
-
-      </section>
-
-      <aside class="card">
-        <h2>Pay via eSewa</h2>
-        <p class="muted" style="margin:0 0 10px 0;">
-          Pay to the number below and take screenshot.
-        </p>
-
-        <div class="row">
-          <span class="chip">WhatsApp: <span class="mono">9744452908</span></span>
-          <span class="chip">eSewa: <span class="mono">9812766213</span></span>
-        </div>
-
-        <div class="pay-box">
-          <div class="row">
-            <div>
-              <div class="muted tiny">eSewa Number</div>
-              <div class="mono" style="font-size:20px; font-weight:900;">9812766213</div>
+            <div class="copy-wrap">
+              <span class="pill">eSewa Pay: <span class="mono">9812766213</span></span>
+              <a class="btn btn-ghost btn-small" target="_blank"
+                href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20have%20paid.%20Here%20is%20my%20screenshot.">
+                Send Screenshot ✅
+              </a>
             </div>
-            <button class="btn btn-small btn-ghost" id="copyEsewa" type="button">Copy</button>
+          </div>
+
+          <div class="tiny muted" style="margin-top:12px;">
+            🔒 Trusted Store • Verified reviews • Fast support ✅
           </div>
         </div>
 
-        <div class="pay-box">
-          <div style="font-weight:900; margin-bottom:6px;">eSewa QR</div>
-          <div class="muted tiny" style="margin-bottom:10px;">
-            Upload QR image as <span class="mono">esewa-qr.png</span> (same folder)
-          </div>
-          <img class="qr" src="esewa-qr.png" alt="eSewa QR code" />
-        </div>
+      </div>
 
-        <div class="pay-box">
-          <div style="font-weight:900; margin-bottom:6px;">Accepted Payments ✅</div>
-          <div class="muted tiny" style="margin-bottom:10px;">
-            eSewa / Khalti / FonePay / IME Pay
-          </div>
-          <img class="pay-methods-img" src="payments.png" alt="Payment Methods">
-        </div>
-
-        <p class="tiny muted" style="margin:0;">
-          Safety: Never share OTP/passwords.
-        </p>
-      </aside>
     </div>
   </main>
 
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> AccesProNp Trusted</span>
+      <a href="index.html" class="muted">Home</a>
+    </div>
+  </footer>
+
+  <!-- ✅ Floating WhatsApp Support -->
+  <div class="wa-float">
+    <div class="wa-bubble">Support</div>
+    <a class="wa-btn" target="_blank"
+      href="https://wa.me/9779744452908?text=Hi%20AccesProNp%2C%20I%20need%20help%20about%20order.">
+      <span>💬</span>
+    </a>
+  </div>
+
   <script>
-    const PLANS = {
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ✅ THEME TOGGLE */
+    const themeBtn = document.getElementById("themeBtn");
+    function applyTheme(t){
+      document.documentElement.setAttribute("data-theme", t);
+      localStorage.setItem("theme", t);
+      themeBtn.textContent = (t === "dark") ? "☀️ Light" : "🌙 Dark";
+    }
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyTheme(savedTheme);
+
+    themeBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+
+    /* ✅ PRODUCTS + PLANS */
+    const products = {
       "Netflix": [
-        "1 Month - Rs. 299",
-        "2 Months - Rs. 549",
-        "3 Months - Rs. 849",
-        "6 Months - Rs. 1549",
-        "9 Months - Rs. 2199",
-        "1 Year - Rs. 2699"
+        { plan:"1 Month", price:349 },
+        { plan:"2 Months", price:549 },
+        { plan:"3 Months", price:849 },
+        { plan:"6 Months", price:1549 },
+        { plan:"9 Months", price:2199 },
+        { plan:"1 Year", price:2699 },
       ],
       "Spotify Premium": [
-        "3 Months - Rs. 899",
-        "6 Months - Rs. 1,599",
-        "1 Year - Rs. 2,299"
+        { plan:"3 Months", price:899 },
+        { plan:"6 Months", price:1599 },
+        { plan:"1 Year", price:2299 },
       ],
       "YouTube Premium": [
-        "1 Month - Rs. 199",
-        "3 Months - Rs. 499",
-        "6 Months - Rs. 899",
-        "1 Year - Rs. 1549"
+        { plan:"3 Months", price:499 },
+        { plan:"6 Months", price:899 },
+        { plan:"1 Year", price:1549 },
       ],
       "Apple TV+": [
-        "1 Month - Rs. 329",
-        "3 Months - Rs. 849",
-        "6 Months - Rs. 1649",
-        "1 Year - Rs. 3049"
+        { plan:"1 Month", price:329 },
+        { plan:"3 Months", price:849 },
+        { plan:"6 Months", price:1649 },
+        { plan:"1 Year", price:3049 },
       ],
       "ChatGPT Plus": [
-        "1 Month - Rs. 349",
-        "2 Months - Rs. 599",
-        "3 Months - Rs. 749",
-        "6 Months - Rs. 1349",
-        "1 Year - Rs. 2849"
+        { plan:"1 Month", price:499 },
+        { plan:"2 Months", price:899 },
+        { plan:"3 Months", price:949 },
+        { plan:"6 Months", price:1349 },
+        { plan:"1 Year", price:2849 },
       ],
       "Prime Video": [
-        "Only 549rs 6 month personal profile"
-      ]
+        { plan:"6 Months", price:549 },
+      ],
+
+      /* ✅ NEW PRODUCTS */
+      "Google Gemini 1 Year": [
+        { plan:"1 Year (2TB + Gemini AI)", price:1999 },
+      ],
+      "Perplexity Pro 1 Year": [
+        { plan:"1 Year (Pro)", price:1799 },
+      ],
+      "Discord Nitro 3 Months": [
+        { plan:"3 Months (Own Account)", price:599 },
+      ],
+      "Crunchyroll 1 Year": [
+        { plan:"1 Year (Premium)", price:1999 },
+      ],
     };
 
-    const productEl = document.getElementById("product");
-    const planEl = document.getElementById("plan");
+    const productSelect = document.getElementById("productSelect");
+    const planSelect = document.getElementById("planSelect");
 
-    function fillProducts(selected){
-      productEl.innerHTML = "";
-      Object.keys(PLANS).forEach(name => {
-        const opt = document.createElement("option");
-        opt.value = name;
-        opt.textContent = name;
-        if (selected && selected === name) opt.selected = true;
-        productEl.appendChild(opt);
-      });
+    const sumProduct = document.getElementById("sumProduct");
+    const sumPlan = document.getElementById("sumPlan");
+    const sumPrice = document.getElementById("sumPrice");
+    const sumTotal = document.getElementById("sumTotal");
+
+    function formatRs(n){
+      return "Rs. " + Number(n).toLocaleString("en-NP");
     }
 
-    function fillPlans(product, selectedPlan){
-      planEl.innerHTML = "";
-      (PLANS[product] || []).forEach(p => {
+    function fillProducts(){
+      productSelect.innerHTML = "";
+      Object.keys(products).forEach((p) => {
         const opt = document.createElement("option");
         opt.value = p;
         opt.textContent = p;
-        if (selectedPlan && selectedPlan === p) opt.selected = true;
-        planEl.appendChild(opt);
+        productSelect.appendChild(opt);
       });
     }
 
-    const params = new URLSearchParams(location.search);
-    const qProduct = params.get("product");
-    const qPlan = params.get("plan");
+    function fillPlans(product){
+      planSelect.innerHTML = "";
+      products[product].forEach((x, idx) => {
+        const opt = document.createElement("option");
+        opt.value = idx;
+        opt.textContent = `${x.plan} — ${formatRs(x.price)}`;
+        planSelect.appendChild(opt);
+      });
+    }
 
-    fillProducts(qProduct || "Netflix");
-    fillPlans(productEl.value, qPlan || "");
+    function updateSummary(){
+      const product = productSelect.value;
+      const planObj = products[product][Number(planSelect.value)];
+      sumProduct.textContent = product;
+      sumPlan.textContent = planObj.plan;
+      sumPrice.textContent = formatRs(planObj.price);
+      sumTotal.textContent = formatRs(planObj.price);
+    }
 
-    productEl.addEventListener("change", () => {
-      fillPlans(productEl.value, "");
+    fillProducts();
+    fillPlans(productSelect.value);
+    updateSummary();
+
+    productSelect.addEventListener("change", () => {
+      fillPlans(productSelect.value);
+      updateSummary();
     });
 
-    const proof = document.getElementById("proof");
-    const proofName = document.getElementById("proofName");
-    proof.addEventListener("change", () => {
-      proofName.textContent = proof.files && proof.files[0]
-        ? ("Selected: " + proof.files[0].name)
-        : "No file selected.";
-    });
+    planSelect.addEventListener("change", updateSummary);
 
-    document.getElementById("copyEsewa").addEventListener("click", async () => {
+    /* ✅ URL PREFILL (pay.html?product=Netflix) */
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get("product");
+    if(p){
+      const decoded = decodeURIComponent(p);
+      if(products[decoded]){
+        productSelect.value = decoded;
+        fillPlans(decoded);
+        updateSummary();
+      }
+    }
+
+    /* ✅ COPY eSewa */
+    const copyBtn = document.getElementById("copyEsewaBtn");
+    const copyMsg = document.getElementById("copyMsg");
+    copyBtn.addEventListener("click", async () => {
       try{
         await navigator.clipboard.writeText("9812766213");
-        const btn = document.getElementById("copyEsewa");
-        btn.textContent = "Copied!";
-        setTimeout(()=>btn.textContent="Copy", 1100);
-      }catch{
-        alert("eSewa: 9812766213");
+        copyMsg.textContent = "Copied ✅";
+        setTimeout(() => copyMsg.textContent = "", 2000);
+      } catch(e){
+        copyMsg.textContent = "Copy failed ❌";
       }
     });
 
-    document.getElementById("orderForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const fd = new FormData(e.target);
+    /* ✅ SEND ORDER TO WHATSAPP */
+    const whatsappOrderBtn = document.getElementById("whatsappOrderBtn");
+    whatsappOrderBtn.addEventListener("click", () => {
+      const product = productSelect.value;
+      const planObj = products[product][Number(planSelect.value)];
 
-      const name = fd.get("name") || "";
-      const product = fd.get("product") || "";
-      const plan = fd.get("plan") || "";
-      const email = fd.get("email") || "";
-      const phone = fd.get("phone") || "";
-      const notes = fd.get("notes") || "";
-      const proofFile = (proof.files && proof.files[0]) ? proof.files[0].name : "Not selected";
+      const name = document.getElementById("custName").value.trim();
+      const wa = document.getElementById("custWhatsApp").value.trim();
+      const account = document.getElementById("custAccount").value.trim();
+      const note = document.getElementById("custNote").value.trim();
 
       const msg =
-`Hi AccesProNp! I want to order:
-Name: ${name}
-Product: ${product}
-Plan: ${plan}
-Email: ${email}
-My WhatsApp: ${phone}
+`Hi AccesProNp ✅
+I want to order:
 
-Payment: eSewa
-Paid to: 9812766213
-Screenshot file: ${proofFile}
+📌 Product: ${product}
+⏳ Plan: ${planObj.plan}
+💰 Price: ${formatRs(planObj.price)}
 
-Notes: ${notes}
+👤 Name: ${name || "-"}
+📱 WhatsApp: ${wa || "-"}
+📧 Account/Email: ${account || "-"}
+📝 Note: ${note || "-"}
 
-I will attach the screenshot in WhatsApp now ✅`;
+✅ I will pay now and send screenshot.`;
 
       const url = "https://wa.me/9779744452908?text=" + encodeURIComponent(msg);
       window.open(url, "_blank");
     });
   </script>
+
 </body>
 </html>
-
