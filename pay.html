@@ -118,6 +118,12 @@
     }
     input:focus,textarea:focus,select:focus{border-color: rgba(34,211,238,.75)}
 
+    /* ✅✅ FIX: DROPDOWN OPTIONS VISIBLE */
+    select option{
+      color:#0b1020 !important;
+      background:#ffffff !important;
+    }
+
     .pay-box{
       border:1px solid var(--border);
       border-radius:16px;
@@ -257,7 +263,7 @@
 
         <div class="hb-row" style="margin-top:18px;">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <img class="hb-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Hamrobazar_logo.png/640px-Hamrobazar_logo.png" alt="Hamrobazaar">
+            <img class="hb-logo" src="hamrobazaar.png" alt="Hamrobazaar">
             <div>
               <div style="font-weight:900;">Hamrobazaar Trusted ✅</div>
               <div class="muted tiny">Check profile & reviews</div>
@@ -422,4 +428,32 @@
       const fd = new FormData(e.target);
 
       const name = fd.get("name") || "";
-      const produ
+      const product = fd.get("product") || "";
+      const plan = fd.get("plan") || "";
+      const email = fd.get("email") || "";
+      const phone = fd.get("phone") || "";
+      const notes = fd.get("notes") || "";
+      const proofFile = (proof.files && proof.files[0]) ? proof.files[0].name : "Not selected";
+
+      const msg =
+`Hi AccesProNp! I want to order:
+Name: ${name}
+Product: ${product}
+Plan: ${plan}
+Email: ${email}
+My WhatsApp: ${phone}
+
+Payment: eSewa
+Paid to: 9812766213
+Screenshot file: ${proofFile}
+
+Notes: ${notes}
+
+I will attach the screenshot in WhatsApp now ✅`;
+
+      const url = "https://wa.me/9779744452908?text=" + encodeURIComponent(msg);
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
